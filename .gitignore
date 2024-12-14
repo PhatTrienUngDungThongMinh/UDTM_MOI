@@ -30,4 +30,4 @@ Release/
 *.db
 *.db-shm
 *.db-wal
-DTO/
+*.dbml
