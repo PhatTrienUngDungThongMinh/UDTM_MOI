@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationDAL.cs" />
     <Compile Include="CategoryDAL.cs" />
     <Compile Include="ColorDAL.cs" />
     <Compile Include="CountryOfOriginDAL.cs" />

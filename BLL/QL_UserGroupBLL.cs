@@ -14,14 +14,17 @@ namespace BLL
 
         public QL_UserGroupBLL()
         {
-            
+
         }
 
         public List<QL_UserGroup> GetAllQL_UserGroups()
         {
             return qlUserGroupDAL.GetAllQL_UserGroups();
         }
-
+        public List<QL_UserGroup> GetAllQL_UserGroupByIdPosition(int id)
+        {
+            return qlUserGroupDAL.GetAllQL_UserGroupByIdPosition(id);
+        }
         public void AddQL_UserGroup(QL_UserGroup userGroup)
         {
             if (userGroup.IDEmployees <= 0)

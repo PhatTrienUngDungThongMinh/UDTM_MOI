@@ -14,14 +14,25 @@ namespace BLL
 
         public EmployeeBLL()
         {
-            
+
         }
 
         public List<Employee> GetAllEmployees()
         {
             return employeeDAL.GetAllEmployees();
         }
-
+        public List<Employee> GetEmployeesByIdPosition(int id)
+        {
+            return employeeDAL.GetEmployeesByPositionId(id);
+        }
+        public List<Position> GetPositionsByEmployeeId(int employeeId)
+        {
+            return employeeDAL.GetPositionsByEmployeeId(employeeId);
+        }
+        public Employee getEmployeeByUsername(string Username)
+        {
+            return employeeDAL.getEmployeeByUsername(Username);
+        }
         public void AddEmployee(Employee employee)
         {
 

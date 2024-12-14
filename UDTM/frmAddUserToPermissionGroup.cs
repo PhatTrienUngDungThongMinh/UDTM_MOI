@@ -16,6 +16,10 @@ namespace DoAnUDTM
     {
         PositionBLL position = new PositionBLL();
         EmployeeBLL employee = new EmployeeBLL();
+        QL_UserGroupBLL userGroup = new QL_UserGroupBLL();
+        List<Employee> listEmployee = new List<Employee>();
+        Employee em;
+        Position selectedItem;
         public frmAddUserToPermissionGroup()
         {
             InitializeComponent();
@@ -27,18 +31,97 @@ namespace DoAnUDTM
             lstPermissionGroups.DataSource = position.GetAllPositions();
             lstPermissionGroups.DisplayMember = "PositionName";
         }
-
-        private void lstPermissionGroups_SelectedIndexChanged(object sender, EventArgs e)
+        private void loadPermissionGroups()
+        {
+            listEmployee = employee.GetEmployeesByIdPosition(selectedItem.id);
+            txtPermissions.Text = selectedItem.PositionName.ToString();
+            txtUserName.Text = "";
+            txtFullname.Text = "";
+            dgvMembers.DataSource = listEmployee;
+        }
+        private void lstPermissionGroups_MouseClick(object sender, MouseEventArgs e)
         {
             if (lstPermissionGroups.SelectedItem != null)
             {
-                //Position selectedItem = (Position)lstPermissionGroups.SelectedItem;
-                //dgvMembers.DataSource = employee.GetEmployeeByIdPosition(selectedItem.id);
-                Position selectedItem = (Position)lstPermissionGroups.SelectedItem;
-
-                // Assuming the 'id' is a property of 'position' and GetEmployeeByIdPosition expects an 'id'
-                // Set the data source for dgvMembers (assuming employees is a collection or list)
+                selectedItem = (Position)lstPermissionGroups.SelectedItem;
+                loadPermissionGroups();
+            }
+        }
+        
+        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvMembers.DataSource != null)
+            {
+                DataGridViewRow row = dgvMembers.Rows[e.RowIndex];
+                txtUserName.Text = row.Cells["Username"].Value.ToString();
+                txtFullname.Text = row.Cells["FullName"].Value.ToString();
+            }
+        }
+        private bool checkEmployeeInListEmployees(Employee em)
+        {
+            return listEmployee.Contains(em);
+        }
+        private void btnDeleteMember_Click(object sender, EventArgs e)
+        {
+            if (dgvMembers.SelectedRows.Count > 0)
+            {
+                if(checkEmployeeInListEmployees(em))
+                {
+                    try
+                    {
+                        userGroup.DeleteQL_UserGroup(em.id, selectedItem.id);
+                        loadPermissionGroups();
+                        MessageBox.Show("Xóa thành công!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("vui lòng thử lại sau");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Không có nhân viên trong list");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn thành viên cần xóa.");
+            }
+        }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            if(em != null && selectedItem != null)
+            {
+                QL_UserGroup user = new QL_UserGroup();
+                user.IDEmployees = em.id;
+                user.IDPositions = selectedItem.id;
+                userGroup.AddQL_UserGroup(user);
+                loadPermissionGroups();
+                MessageBox.Show("Thêm thành công!","kết quả",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("thông tin không hợp lệ vui lòng kiểm tra lại thông tin cần thêm!");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            em = employee.getEmployeeByUsername(txtUserName.Text);
+            if (em != null)
+            {
+                txtFullname.Text = em.FullName;
+            }
+            else
+            {
+                txtFullname.Text = "";
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BLL
 
         public PositionBLL()
         {
-            
+
         }
 
         public List<Position> GetAllPositions()
@@ -22,14 +22,14 @@ namespace BLL
             return positionDAL.GetAllPositions();
         }
 
-        public void AddPosition(Position position)
+        public void AddPosition(Position Position)
         {
-            if (string.IsNullOrWhiteSpace(position.PositionName))
+            if (string.IsNullOrWhiteSpace(Position.PositionName))
             {
                 throw new ArgumentException("Tên Position không được để trống.");
             }
 
-            positionDAL.AddPosition(position);
+            positionDAL.AddPosition(Position);
         }
 
         public void UpdatePosition(Position position)

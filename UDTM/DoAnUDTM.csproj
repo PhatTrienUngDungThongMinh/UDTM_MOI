@@ -179,6 +179,9 @@
     <EmbeddedResource Include="frmProductManagement.resx">
       <DependentUpon>frmProductManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRoleManagement.resx">
+      <DependentUpon>frmRoleManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWarrantyPolicies.resx">
       <DependentUpon>frmWarrantyPolicies.cs</DependentUpon>
     </EmbeddedResource>

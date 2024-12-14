@@ -14,12 +14,21 @@ namespace BLL
 
         public QL_PhanQuyenBLL()
         {
-            
+
         }
 
+        public bool UpdatePermissionsByIdPosition(int positionId, List<QL_PhanQuyen> permissions)
+        {
+            return qlPhanQuyenDAL.UpdatePermissionsByIdPosition(positionId, permissions);
+        }
         public List<QL_PhanQuyen> GetAllQL_PhanQuyens()
         {
             return qlPhanQuyenDAL.GetAllQL_PhanQuyens();
+        }
+
+        public List<QL_PhanQuyen> GetAllQL_PhanQuyensByIdPosition(int id)
+        {
+            return qlPhanQuyenDAL.getAllQl_PhanquyensByIdPosition(id);
         }
 
         public void AddQL_PhanQuyen(QL_PhanQuyen phanQuyen)

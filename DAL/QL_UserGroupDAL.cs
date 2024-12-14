@@ -26,7 +26,11 @@ namespace DAL
             db.QL_UserGroups.InsertOnSubmit(userGroup);
             db.SubmitChanges();
         }
-
+        public List<QL_UserGroup> GetAllQL_UserGroupByIdPosition(int idPosition)
+        {
+            List<QL_UserGroup> QlU = db.QL_UserGroups.Where(pq => pq.IDPositions == idPosition).ToList();
+            return QlU;
+        }
         public void UpdateQL_UserGroup(QL_UserGroup userGroup)
         {
             var existingUserGroup = db.QL_UserGroups.SingleOrDefault(ug => ug.IDEmployees == userGroup.IDEmployees && ug.IDPositions == userGroup.IDPositions);

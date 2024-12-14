@@ -21,11 +21,33 @@ namespace DAL
             return db.QL_PhanQuyens.ToList();
         }
 
+        public List<QL_PhanQuyen> getAllQl_PhanquyensByIdPosition(int idPosition)
+        {
+            List<QL_PhanQuyen> QlPQ = db.QL_PhanQuyens.Where(pq => pq.IDPositions == idPosition).ToList();
+            return QlPQ;
+        }
         public void AddQL_PhanQuyen(QL_PhanQuyen phanQuyen)
         {
             db.QL_PhanQuyens.InsertOnSubmit(phanQuyen);
             db.SubmitChanges();
         }
+
+        public bool UpdatePermissionsByIdPosition(int positionId, List<QL_PhanQuyen> permissions)
+        {
+            try
+            {
+                var oldPermissions = db.QL_PhanQuyens.Where(p => p.IDPositions == positionId);
+                db.QL_PhanQuyens.DeleteAllOnSubmit(oldPermissions);
+                db.QL_PhanQuyens.InsertAllOnSubmit(permissions);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         public void UpdateQL_PhanQuyen(QL_PhanQuyen phanQuyen)
         {

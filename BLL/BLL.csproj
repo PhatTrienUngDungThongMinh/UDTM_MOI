@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationBLL.cs" />
     <Compile Include="CategoryBLL.cs" />
     <Compile Include="ColorBLL.cs" />
     <Compile Include="CountryOfOriginBLL.cs" />
