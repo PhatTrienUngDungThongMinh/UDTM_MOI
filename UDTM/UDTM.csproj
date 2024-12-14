@@ -210,7 +210,7 @@
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{746cb63d-85de-48ad-916b-fc81211e26bd}</Project>
+      <Project>{0912575d-8361-4eee-9954-0e4712a19445}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
