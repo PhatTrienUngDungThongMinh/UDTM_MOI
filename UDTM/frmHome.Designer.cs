@@ -50,10 +50,13 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblTest = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SlidebarTimer
@@ -78,8 +81,10 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.sidebar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.sidebar.Controls.Add(this.pictureBox1);
+            this.sidebar.Controls.Add(this.dateTimePicker1);
             this.sidebar.Controls.Add(this.txtNameEmployee);
             this.sidebar.Controls.Add(this.label1);
             this.sidebar.Controls.Add(this.flowLayoutPanel1);
@@ -97,7 +102,7 @@
             // txtNameEmployee
             // 
             this.txtNameEmployee.AutoSize = true;
-            this.txtNameEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameEmployee.Location = new System.Drawing.Point(79, 560);
             this.txtNameEmployee.Name = "txtNameEmployee";
             this.txtNameEmployee.Size = new System.Drawing.Size(34, 16);
@@ -126,15 +131,15 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-2, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, 141);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 508);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 391);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnHoaDon
             // 
-            this.btnHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.btnHoaDon.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnHoaDon.Location = new System.Drawing.Point(2, 2);
@@ -149,7 +154,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button4.Location = new System.Drawing.Point(2, 41);
@@ -164,7 +169,7 @@
             // 
             // btnSanPham
             // 
-            this.btnSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.btnSanPham.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnSanPham.Location = new System.Drawing.Point(2, 80);
@@ -179,7 +184,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button6.Location = new System.Drawing.Point(2, 119);
@@ -194,7 +199,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button7.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button7.Location = new System.Drawing.Point(2, 158);
@@ -209,7 +214,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(2, 197);
@@ -224,7 +229,7 @@
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.btnKhachHang.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnKhachHang.Location = new System.Drawing.Point(2, 236);
@@ -239,7 +244,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button3.Location = new System.Drawing.Point(2, 275);
@@ -254,7 +259,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button5.Location = new System.Drawing.Point(2, 314);
@@ -269,7 +274,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.button9.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.button9.Location = new System.Drawing.Point(2, 353);
@@ -295,7 +300,7 @@
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
+            this.btnDangXuat.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btnDangXuat.Location = new System.Drawing.Point(0, 579);
@@ -328,6 +333,23 @@
             this.panel_body.Size = new System.Drawing.Size(826, 619);
             this.panel_body.TabIndex = 7;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +371,7 @@
             this.sidebar.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +397,7 @@
         private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtNameEmployee;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
