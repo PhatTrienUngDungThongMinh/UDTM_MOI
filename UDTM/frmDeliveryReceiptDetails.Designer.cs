@@ -31,9 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DsPhieuNhap = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbTrangThai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DSSP = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbbTrangThai);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.DSSP);
             this.groupBox2.Location = new System.Drawing.Point(417, 9);
@@ -74,13 +74,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin đơn hàng";
             // 
-            // comboBox1
+            // cbbTrangThai
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 367);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbbTrangThai.FormattingEnabled = true;
+            this.cbbTrangThai.Items.AddRange(new object[] {
+            "Đã xác nhận",
+            "Đã hủy",
+            "Hoàn thành",
+            "Chờ giao hàng",
+            "Chờ xác nhận"});
+            this.cbbTrangThai.Location = new System.Drawing.Point(147, 367);
+            this.cbbTrangThai.Name = "cbbTrangThai";
+            this.cbbTrangThai.Size = new System.Drawing.Size(202, 21);
+            this.cbbTrangThai.TabIndex = 5;
             // 
             // label1
             // 
@@ -91,14 +97,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Trạng thái";
             // 
-            // button2
+            // btnLuu
             // 
-            this.button2.Location = new System.Drawing.Point(226, 429);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLuu.Location = new System.Drawing.Point(226, 429);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(87, 30);
+            this.btnLuu.TabIndex = 3;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // button1
             // 
@@ -112,7 +119,7 @@
             // DSSP
             // 
             this.DSSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DSSP.Location = new System.Drawing.Point(0, 19);
+            this.DSSP.Location = new System.Drawing.Point(6, 29);
             this.DSSP.Name = "DSSP";
             this.DSSP.Size = new System.Drawing.Size(387, 286);
             this.DSSP.TabIndex = 1;
@@ -142,9 +149,9 @@
         private System.Windows.Forms.DataGridView DsPhieuNhap;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DSSP;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbTrangThai;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button button1;
     }
 }

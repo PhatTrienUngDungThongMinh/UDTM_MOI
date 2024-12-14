@@ -39,9 +39,9 @@
             // 
             // lstPermissionGroups
             // 
-            this.lstPermissionGroups.Location = new System.Drawing.Point(395, 200);
+            this.lstPermissionGroups.Location = new System.Drawing.Point(437, 263);
             this.lstPermissionGroups.Name = "lstPermissionGroups";
-            this.lstPermissionGroups.Size = new System.Drawing.Size(350, 147);
+            this.lstPermissionGroups.Size = new System.Drawing.Size(361, 303);
             this.lstPermissionGroups.TabIndex = 1;
             this.lstPermissionGroups.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstPermissionGroups_MouseClick);
             // 
@@ -53,7 +53,7 @@
             this.FullName});
             this.dgvMembers.Location = new System.Drawing.Point(12, 50);
             this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(345, 297);
+            this.dgvMembers.Size = new System.Drawing.Size(416, 518);
             this.dgvMembers.TabIndex = 3;
             this.dgvMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellClick);
             // 
@@ -78,7 +78,7 @@
             // lblGroups
             // 
             this.lblGroups.AutoSize = true;
-            this.lblGroups.Location = new System.Drawing.Point(392, 184);
+            this.lblGroups.Location = new System.Drawing.Point(434, 232);
             this.lblGroups.Name = "lblGroups";
             this.lblGroups.Size = new System.Drawing.Size(129, 13);
             this.lblGroups.TabIndex = 0;
@@ -95,7 +95,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(117, 22);
+            this.txtUserName.Location = new System.Drawing.Point(129, 29);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(200, 20);
             this.txtUserName.TabIndex = 5;
@@ -103,7 +103,7 @@
             // 
             // txtPermissions
             // 
-            this.txtPermissions.Location = new System.Drawing.Point(117, 85);
+            this.txtPermissions.Location = new System.Drawing.Point(129, 92);
             this.txtPermissions.Name = "txtPermissions";
             this.txtPermissions.Size = new System.Drawing.Size(200, 20);
             this.txtPermissions.TabIndex = 7;
@@ -111,7 +111,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(20, 26);
+            this.lblUserName.Location = new System.Drawing.Point(32, 33);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(79, 13);
             this.lblUserName.TabIndex = 4;
@@ -120,7 +120,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(19, 55);
+            this.lblEmail.Location = new System.Drawing.Point(31, 62);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(82, 13);
             this.lblEmail.TabIndex = 6;
@@ -128,7 +128,7 @@
             // 
             // btnAddMember
             // 
-            this.btnAddMember.Location = new System.Drawing.Point(117, 110);
+            this.btnAddMember.Location = new System.Drawing.Point(129, 117);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(84, 23);
             this.btnAddMember.TabIndex = 11;
@@ -137,7 +137,7 @@
             // 
             // btnDeleteMember
             // 
-            this.btnDeleteMember.Location = new System.Drawing.Point(233, 110);
+            this.btnDeleteMember.Location = new System.Drawing.Point(245, 117);
             this.btnDeleteMember.Name = "btnDeleteMember";
             this.btnDeleteMember.Size = new System.Drawing.Size(84, 23);
             this.btnDeleteMember.TabIndex = 12;
@@ -154,16 +154,16 @@
             this.groupBox1.Controls.Add(this.txtPermissions);
             this.groupBox1.Controls.Add(this.lblUserName);
             this.groupBox1.Controls.Add(this.lblEmail);
-            this.groupBox1.Location = new System.Drawing.Point(395, 42);
+            this.groupBox1.Location = new System.Drawing.Point(437, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 139);
+            this.groupBox1.Size = new System.Drawing.Size(361, 174);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thành viên";
             // 
             // txtFullname
             // 
-            this.txtFullname.Location = new System.Drawing.Point(117, 52);
+            this.txtFullname.Location = new System.Drawing.Point(129, 59);
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(200, 20);
             this.txtFullname.TabIndex = 16;
@@ -171,7 +171,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 88);
+            this.label1.Location = new System.Drawing.Point(31, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 15;
@@ -179,7 +179,7 @@
             // 
             // frmAddUserToPermissionGroup
             // 
-            this.ClientSize = new System.Drawing.Size(765, 369);
+            this.ClientSize = new System.Drawing.Size(810, 580);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblGroups);
             this.Controls.Add(this.lstPermissionGroups);

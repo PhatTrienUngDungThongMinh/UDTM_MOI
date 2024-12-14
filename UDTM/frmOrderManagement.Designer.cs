@@ -34,6 +34,7 @@ namespace DoAnUDTM
             this.gr = new System.Windows.Forms.GroupBox();
             this.DsHoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbbTrangThai = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@ namespace DoAnUDTM
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.gr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsHoaDon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +62,7 @@ namespace DoAnUDTM
             this.gr.Controls.Add(this.DsHoaDon);
             this.gr.Location = new System.Drawing.Point(12, 83);
             this.gr.Name = "gr";
-            this.gr.Size = new System.Drawing.Size(470, 467);
+            this.gr.Size = new System.Drawing.Size(423, 527);
             this.gr.TabIndex = 1;
             this.gr.TabStop = false;
             this.gr.Text = "Danh sách hóa đơn đã bán";
@@ -73,7 +73,7 @@ namespace DoAnUDTM
             this.DsHoaDon.Location = new System.Drawing.Point(6, 19);
             this.DsHoaDon.Name = "DsHoaDon";
             this.DsHoaDon.RowHeadersWidth = 51;
-            this.DsHoaDon.Size = new System.Drawing.Size(458, 438);
+            this.DsHoaDon.Size = new System.Drawing.Size(404, 488);
             this.DsHoaDon.TabIndex = 0;
             this.DsHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DsHoaDon_CellClick);
             // 
@@ -83,14 +83,21 @@ namespace DoAnUDTM
             this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Location = new System.Drawing.Point(12, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(877, 57);
+            this.groupBox1.Size = new System.Drawing.Size(786, 57);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(156, 19);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(289, 20);
+            this.txtTimKiem.TabIndex = 38;
+            // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(535, 14);
+            this.btnTimKiem.Location = new System.Drawing.Point(488, 14);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(85, 29);
             this.btnTimKiem.TabIndex = 32;
@@ -111,9 +118,9 @@ namespace DoAnUDTM
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(488, 83);
+            this.groupBox2.Location = new System.Drawing.Point(441, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(401, 467);
+            this.groupBox2.Size = new System.Drawing.Size(357, 527);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Chung";
@@ -127,14 +134,14 @@ namespace DoAnUDTM
             "Hoàn thành",
             "Chờ giao hàng",
             "Chờ xác nhận"});
-            this.cbbTrangThai.Location = new System.Drawing.Point(59, 427);
+            this.cbbTrangThai.Location = new System.Drawing.Point(50, 477);
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Size = new System.Drawing.Size(140, 21);
             this.cbbTrangThai.TabIndex = 37;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(239, 421);
+            this.button2.Location = new System.Drawing.Point(220, 471);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 30);
             this.button2.TabIndex = 33;
@@ -147,7 +154,7 @@ namespace DoAnUDTM
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(6, 120);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(389, 292);
+            this.groupBox3.Size = new System.Drawing.Size(345, 335);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sản phẩm theo hóa đơn";
@@ -157,45 +164,45 @@ namespace DoAnUDTM
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(376, 267);
+            this.dataGridView1.Size = new System.Drawing.Size(332, 308);
             this.dataGridView1.TabIndex = 0;
             // 
             // txtTrangThai
             // 
             this.txtTrangThai.Enabled = false;
-            this.txtTrangThai.Location = new System.Drawing.Point(277, 74);
+            this.txtTrangThai.Location = new System.Drawing.Point(255, 74);
             this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(114, 20);
+            this.txtTrangThai.Size = new System.Drawing.Size(96, 20);
             this.txtTrangThai.TabIndex = 35;
             // 
             // txtTongTien
             // 
             this.txtTongTien.Enabled = false;
-            this.txtTongTien.Location = new System.Drawing.Point(277, 31);
+            this.txtTongTien.Location = new System.Drawing.Point(255, 31);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(114, 20);
+            this.txtTongTien.Size = new System.Drawing.Size(96, 20);
             this.txtTongTien.TabIndex = 34;
             // 
             // txtNgayBan
             // 
             this.txtNgayBan.Enabled = false;
-            this.txtNgayBan.Location = new System.Drawing.Point(80, 73);
+            this.txtNgayBan.Location = new System.Drawing.Point(74, 73);
             this.txtNgayBan.Name = "txtNgayBan";
-            this.txtNgayBan.Size = new System.Drawing.Size(114, 20);
+            this.txtNgayBan.Size = new System.Drawing.Size(102, 20);
             this.txtNgayBan.TabIndex = 33;
             // 
             // txtMaHD
             // 
             this.txtMaHD.Enabled = false;
-            this.txtMaHD.Location = new System.Drawing.Point(80, 31);
+            this.txtMaHD.Location = new System.Drawing.Point(74, 31);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(114, 20);
+            this.txtMaHD.Size = new System.Drawing.Size(102, 20);
             this.txtMaHD.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 34);
+            this.label5.Location = new System.Drawing.Point(199, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 21;
@@ -204,7 +211,7 @@ namespace DoAnUDTM
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(216, 80);
+            this.label6.Location = new System.Drawing.Point(199, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 19;
@@ -228,18 +235,11 @@ namespace DoAnUDTM
             this.label8.TabIndex = 15;
             this.label8.Text = "Mã Hóa Đơn";
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(221, 19);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(289, 20);
-            this.txtTimKiem.TabIndex = 38;
-            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 556);
+            this.ClientSize = new System.Drawing.Size(838, 622);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gr);
             this.Controls.Add(this.groupBox1);
