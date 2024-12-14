@@ -66,5 +66,15 @@ namespace BLL
         {
             productDAL.DeleteProduct(productId);
         }
+        public Product GetProductById(int productId)
+        {
+            if (productId <= 0)
+            {
+                throw new ArgumentException("ProductID không hợp lệ.");
+            }
+
+            return new ProductDAL().GetProductById(productId);
+        }
+
     }
 }

@@ -111,7 +111,7 @@ namespace DTO
     #endregion
 		
 		public DBDataContext() : 
-				base(global::DTO.Properties.Settings.Default.DBEcommerceConnectionString2, mappingSource)
+				base(global::DTO.Properties.Settings.Default.DBEcommerceConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

@@ -21,6 +21,16 @@ namespace BLL
         {
             return deliveryReceiptDetailDAL.GetAllDeliveryReceiptDetails();
         }
+        public List<int> GetProductIdsByReceiptId(int receiptId)
+        {
+            if (receiptId <= 0)
+            {
+                throw new ArgumentException("ReceiptID không hợp lệ.");
+            }
+
+    
+            return new DeliveryReceiptDetailDAL().GetProductIdsByReceiptId(receiptId);
+        }
 
         public void AddDeliveryReceiptDetail(DeliveryReceiptDetail detail)
         {
@@ -56,5 +66,15 @@ namespace BLL
         {
             deliveryReceiptDetailDAL.DeleteDeliveryReceiptDetail(detailId);
         }
+        public List<DeliveryReceiptDetail> GetDetailsByReceiptId(int receiptId)
+        {
+            if (receiptId <= 0)
+            {
+                throw new ArgumentException("ReceiptID không hợp lệ.");
+            }
+
+            return new DeliveryReceiptDetailDAL().GetDetailsByReceiptId(receiptId);
+        }
+
     }
 }
