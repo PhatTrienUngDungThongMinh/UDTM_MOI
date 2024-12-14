@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace DoAnUDTM
 {
     public partial class frmHome : Form
     {
+        Employee employee;
+        List<Position> positions;
         bool sildebarExpand = true;
         private Form currentFormChild;
-        public frmHome()
+        public frmHome(Employee em, List<Position> pos)
         {
+            employee = em;
+            positions = pos;
             InitializeComponent();
         }
         private void OpenChildForm(Form childForm)

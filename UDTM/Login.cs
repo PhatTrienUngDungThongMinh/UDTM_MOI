@@ -46,8 +46,8 @@ namespace DoAnUDTM
                 //_employee = authentication.GetUserByUsername(txtUsername.Text.Trim());
                 //quyen = emBLL.GetPositionsByEmployeeId(_employee.id);
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //frmHome mainForm = new frmHome(_employee, quyen);
-                //mainForm.Show();
+                frmHome mainForm = new frmHome(_employee, quyen);
+                mainForm.Show();
                 this.Hide();
             }
             //else
