@@ -1,0 +1,32 @@
+.vs
+bin/
+obj/
+**/bin/
+**/obj/
+Debug/
+Release/
+
+# Thư mục Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Thư mục tạm
+*.tmp
+*.log
+*.vscode/
+
+# File tạm hoặc lock
+*.lock
+*.lock.json
+
+# File dump và các file tạm khác
+*.pid
+*.svclog
+
+# File chứa thông tin cấu hình máy
+*.db
+*.db-shm
+*.db-wal
