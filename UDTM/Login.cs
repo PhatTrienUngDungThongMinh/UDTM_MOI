@@ -15,7 +15,7 @@ namespace DoAnUDTM
     public partial class Login : Form
     {
         private EmployeeBLL emBLL = new EmployeeBLL();
-        //private AuthenticationBLL authentication = new AuthenticationBLL();
+        private AuthenticationBLL authentication = new AuthenticationBLL();
         private List<QL_UserGroup> qL_UserGroups = new List<QL_UserGroup>();
         public Employee _employee;
         public List<Position> quyen;
@@ -27,6 +27,7 @@ namespace DoAnUDTM
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //authentication.ResetPasswordToUsername(5);
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
                 MessageBox.Show("Không được bỏ trống " + lblUsername.Text.ToLower(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -40,22 +41,22 @@ namespace DoAnUDTM
                 return;
             }
 
-            //bool isAuthenticated = authentication.AuthenticateUser(txtUsername.Text.Trim(), txtPassword.Text);
-            //if (isAuthenticated)
+            bool isAuthenticated = authentication.AuthenticateUser(txtUsername.Text.Trim(), txtPassword.Text);
+            if (isAuthenticated)
             {
-                //_employee = authentication.GetUserByUsername(txtUsername.Text.Trim());
-                //quyen = emBLL.GetPositionsByEmployeeId(_employee.id);
+                _employee = authentication.GetUserByUsername(txtUsername.Text.Trim());
+                quyen = emBLL.GetPositionsByEmployeeId(_employee.id);
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmHome mainForm = new frmHome(_employee, quyen);
                 mainForm.Show();
                 this.Hide();
             }
-            //else
-            //{
-            //    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    this.txtPassword.Clear();
-            //    this.txtPassword.Focus();
-            //}
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtPassword.Clear();
+                this.txtPassword.Focus();
+            }
         }
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {

@@ -25,7 +25,10 @@ namespace BLL
         {
             return qlPhanQuyenDAL.GetAllQL_PhanQuyens();
         }
-
+        public List<string> getAllScreenByListPosition(List<Position> ls)
+        {
+            return qlPhanQuyenDAL.GetAllScreenCodesByPositions(ls);
+        }
         public List<QL_PhanQuyen> GetAllQL_PhanQuyensByIdPosition(int id)
         {
             return qlPhanQuyenDAL.getAllQl_PhanquyensByIdPosition(id);

@@ -114,7 +114,8 @@ namespace DoAnUDTM
                     newPermissions.Add(new QL_PhanQuyen
                     {
                         IDPositions = positionId,
-                        ScreenCode = screen.ScreenCode
+                        ScreenCode = screen.ScreenCode,
+                        HasPermission = true,
                     });
                 }
             }

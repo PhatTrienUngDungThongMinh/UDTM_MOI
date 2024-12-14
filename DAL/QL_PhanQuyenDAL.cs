@@ -20,6 +20,15 @@ namespace DAL
         {
             return db.QL_PhanQuyens.ToList();
         }
+        public List<string> GetAllScreenCodesByPositions(List<Position> positions)
+        {
+            return positions
+                .SelectMany(pos => pos.QL_PhanQuyens)
+                .Where(perm => perm.HasPermission)
+                .Select(perm => perm.ScreenCode)
+                .Distinct()
+                .ToList();
+        }
 
         public List<QL_PhanQuyen> getAllQl_PhanquyensByIdPosition(int idPosition)
         {

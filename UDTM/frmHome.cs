@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,19 @@ namespace DoAnUDTM
 {
     public partial class frmHome : Form
     {
-        Employee employee;
-        List<Position> positions;
-        bool sildebarExpand = true;
+        private Employee employee;
+        private List<Position> positions;
+        private bool sildebarExpand = true;
         private Form currentFormChild;
+        QL_PhanQuyenBLL phanQuyenBLL = new QL_PhanQuyenBLL();
         public frmHome(Employee em, List<Position> pos)
         {
             employee = em;
             positions = pos;
             InitializeComponent();
+            ApplyPermissions();
         }
+
         private void OpenChildForm(Form childForm)
         {
             if (currentFormChild != null)
@@ -39,20 +43,17 @@ namespace DoAnUDTM
             childForm.BringToFront();
             childForm.Show();
         }
+
         private void SlidebarTimer_Tick(object sender, EventArgs e)
         {
             if (sildebarExpand)
             {
-                // Đặt kích thước của cột đầu tiên (Column 0) của tableLayoutPanel1 thành 100 pixel
                 tableLayoutPanel1.ColumnStyles[1].Width -= 10;
                 if (tableLayoutPanel1.ColumnStyles[1].Width == 40)
                 {
                     sildebarExpand = false;
-
                     SlidebarTimer.Stop();
-
                 }
-
             }
             else
             {
@@ -64,9 +65,50 @@ namespace DoAnUDTM
                 }
             }
         }
+
+        private HashSet<string> GetEmployeePermissions()
+        {
+            // Tạo một HashSet để lưu trữ các quyền duy nhất
+            HashSet<string> permissions = new HashSet<string>();
+
+            // Lấy danh sách các ScreenCode từ danh sách positions
+            List<string> roles = phanQuyenBLL.getAllScreenByListPosition(positions);
+
+            // Thêm từng ScreenCode vào HashSet
+            foreach (string screenCode in roles)
+            {
+                permissions.Add(screenCode);
+            }
+
+            // Trả về HashSet chứa các quyền duy nhất
+            return permissions;
+        }
+
+        private void ApplyPermissions()
+        {
+            HashSet<string> employeePermissions = GetEmployeePermissions();
+
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is Button btn && btn.Tag != null)
+                {
+                    string requiredPermission = btn.Tag.ToString();
+
+                    if (employeePermissions.Contains(requiredPermission))
+                    {
+                        btn.Visible = true;
+                    }
+                    else
+                    {
+                        btn.Visible = false;
+                    }
+                }
+            }
+        }
+
         private void btnSanPham_Click(object sender, EventArgs e)
         {
-            frmProductManagement pm=new frmProductManagement();
+            frmProductManagement pm = new frmProductManagement();
             OpenChildForm(pm);
         }
 
@@ -78,31 +120,31 @@ namespace DoAnUDTM
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            frmOrderManagement om=new frmOrderManagement();
+            frmOrderManagement om = new frmOrderManagement();
             OpenChildForm(om);
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
-            frmCustomerManagement cm=new frmCustomerManagement();
+            frmCustomerManagement cm = new frmCustomerManagement();
             OpenChildForm(cm);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmEmployeeAccountManagement em=new frmEmployeeAccountManagement();
+            frmEmployeeAccountManagement em = new frmEmployeeAccountManagement();
             OpenChildForm(em);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmProductCategorization pc=new frmProductCategorization();
+            frmProductCategorization pc = new frmProductCategorization();
             OpenChildForm(pc);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmProductManagement pm= new frmProductManagement();
+            frmProductManagement pm = new frmProductManagement();
             OpenChildForm(pm);
         }
 
@@ -118,32 +160,32 @@ namespace DoAnUDTM
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void panel_body_Paint(object sender, PaintEventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-
+            // Không làm gì cả hoặc thêm chức năng nếu cần
         }
 
         private void button5_Click_1(object sender, EventArgs e)
