@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UDTM;
 
 namespace DoAnUDTM
 {
@@ -22,6 +23,12 @@ namespace DoAnUDTM
         private void frmInventoryManagement_Load(object sender, EventArgs e)
         {
             DsPhieuNhap.DataSource = deliveryReceipt.GetAllDeliveryReceipts();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmImportedGoods fm = new frmImportedGoods();
+            fm.ShowDialog();
         }
     }
 }
