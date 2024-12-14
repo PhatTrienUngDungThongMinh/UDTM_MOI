@@ -72,5 +72,10 @@ namespace DAL
                 throw new Exception("Product not found");
             }
         }
+        public Product GetProductById(int productId)
+        {
+            return db.Products.SingleOrDefault(p => p.id == productId);
+        }
+
     }
 }

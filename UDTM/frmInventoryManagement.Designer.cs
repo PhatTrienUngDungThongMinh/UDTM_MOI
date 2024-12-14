@@ -33,6 +33,7 @@ namespace DoAnUDTM
         {
             this.DsPhieuNhap = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+<<<<<<< Updated upstream
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -42,6 +43,12 @@ namespace DoAnUDTM
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+=======
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtMaPN = new System.Windows.Forms.TextBox();
+>>>>>>> Stashed changes
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -62,6 +69,7 @@ namespace DoAnUDTM
             this.DsPhieuNhap.RowHeadersWidth = 51;
             this.DsPhieuNhap.Size = new System.Drawing.Size(580, 236);
             this.DsPhieuNhap.TabIndex = 0;
+            this.DsPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DsPhieuNhap_CellClick);
             // 
             // groupBox3
             // 
@@ -98,14 +106,28 @@ namespace DoAnUDTM
             // 
             // textBox5
             // 
+<<<<<<< Updated upstream
             this.textBox5.Location = new System.Drawing.Point(403, 32);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(141, 22);
             this.textBox5.TabIndex = 11;
+=======
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.txtMaPN);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(786, 46);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tác Vụ";
+>>>>>>> Stashed changes
             // 
             // textBox4
             // 
+<<<<<<< Updated upstream
             this.textBox4.Location = new System.Drawing.Point(403, 66);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
@@ -167,6 +189,22 @@ namespace DoAnUDTM
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 22);
             this.textBox2.TabIndex = 2;
+=======
+            this.button3.Location = new System.Drawing.Point(705, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 30);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "xem chi tiết";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtMaPN
+            // 
+            this.txtMaPN.Location = new System.Drawing.Point(447, 16);
+            this.txtMaPN.Name = "txtMaPN";
+            this.txtMaPN.Size = new System.Drawing.Size(252, 20);
+            this.txtMaPN.TabIndex = 2;
+>>>>>>> Stashed changes
             // 
             // label1
             // 
@@ -258,5 +296,11 @@ namespace DoAnUDTM
         private GroupBox groupBox2;
         private Button button2;
         private Button button1;
+<<<<<<< Updated upstream
+=======
+        private Button button3;
+        private TextBox txtMaPN;
+        private Label label1;
+>>>>>>> Stashed changes
     }
 }

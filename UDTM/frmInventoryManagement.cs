@@ -23,5 +23,30 @@ namespace DoAnUDTM
         {
             DsPhieuNhap.DataSource = deliveryReceipt.GetAllDeliveryReceipts();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmImportedGoods fm = new frmImportedGoods();
+            fm.ShowDialog();
+        }
+
+        private void DsPhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DsPhieuNhap.Rows[e.RowIndex];
+
+                txtMaPN.Text = row.Cells["id"].Value.ToString();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmDeliveryReceiptDetails fm=new frmDeliveryReceiptDetails();
+            fm.ShowDialog();
+        }
+>>>>>>> Stashed changes
     }
 }

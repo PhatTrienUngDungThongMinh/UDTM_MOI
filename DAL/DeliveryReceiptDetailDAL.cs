@@ -20,6 +20,15 @@ namespace DAL
         {
             return db.DeliveryReceiptDetails.ToList();
         }
+        public List<int> GetProductIdsByReceiptId(int receiptId)
+        {
+            // Truy vấn danh sách ProductID từ bảng DeliveryReceiptDetails
+            return db.DeliveryReceiptDetails
+                     .Where(d => d.ReceiptID == receiptId)
+                     .Select(d => d.ProductID)
+                     .ToList();
+        }
+
 
         public void AddDeliveryReceiptDetail(DeliveryReceiptDetail detail)
         {
@@ -61,5 +70,10 @@ namespace DAL
                 throw new Exception("DeliveryReceiptDetail not found");
             }
         }
+        public List<DeliveryReceiptDetail> GetDetailsByReceiptId(int receiptId)
+        {
+            return db.DeliveryReceiptDetails.Where(d => d.ReceiptID == receiptId).ToList();
+        }
+
     }
 }
