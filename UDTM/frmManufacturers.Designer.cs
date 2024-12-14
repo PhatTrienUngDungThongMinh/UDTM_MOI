@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManufacturers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNhaSX = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(864, 258);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-           
             // 
             // label1
             // 
@@ -183,40 +183,53 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(506, 29);
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(500, 21);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(107, 33);
+            this.btnSua.Size = new System.Drawing.Size(106, 47);
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(295, 29);
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(295, 21);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(109, 33);
+            this.btnXoa.Size = new System.Drawing.Size(108, 47);
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(725, 29);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(703, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(109, 33);
+            this.button4.Size = new System.Drawing.Size(109, 47);
             this.button4.TabIndex = 10;
             this.button4.Text = "Hủy";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnnThem
             // 
-            this.btnnThem.Location = new System.Drawing.Point(80, 29);
+            this.btnnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnnThem.Image")));
+            this.btnnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnnThem.Location = new System.Drawing.Point(91, 21);
             this.btnnThem.Name = "btnnThem";
-            this.btnnThem.Size = new System.Drawing.Size(128, 33);
+            this.btnnThem.Size = new System.Drawing.Size(107, 47);
             this.btnnThem.TabIndex = 0;
             this.btnnThem.Text = "Thêm";
+            this.btnnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnThem.UseVisualStyleBackColor = true;
             this.btnnThem.Click += new System.EventHandler(this.btnnThem_Click);
             // 

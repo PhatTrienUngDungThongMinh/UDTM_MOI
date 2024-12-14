@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWarrantyPolicies));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNoidung = new System.Windows.Forms.TextBox();
             this.txtDieukien = new System.Windows.Forms.TextBox();
@@ -69,9 +70,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1035, 205);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -80,7 +81,7 @@
             // txtNoidung
             // 
             this.txtNoidung.Location = new System.Drawing.Point(743, 47);
-            this.txtNoidung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoidung.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoidung.Multiline = true;
             this.txtNoidung.Name = "txtNoidung";
             this.txtNoidung.Size = new System.Drawing.Size(253, 150);
@@ -89,7 +90,7 @@
             // txtDieukien
             // 
             this.txtDieukien.Location = new System.Drawing.Point(148, 151);
-            this.txtDieukien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDieukien.Margin = new System.Windows.Forms.Padding(4);
             this.txtDieukien.Name = "txtDieukien";
             this.txtDieukien.Size = new System.Drawing.Size(199, 22);
             this.txtDieukien.TabIndex = 10;
@@ -118,7 +119,7 @@
             // 
             this.txtNgayUpdate.Enabled = false;
             this.txtNgayUpdate.Location = new System.Drawing.Point(481, 120);
-            this.txtNgayUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNgayUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.txtNgayUpdate.Name = "txtNgayUpdate";
             this.txtNgayUpdate.Size = new System.Drawing.Size(211, 22);
             this.txtNgayUpdate.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             this.txtNgayTao.Enabled = false;
             this.txtNgayTao.Location = new System.Drawing.Point(481, 59);
-            this.txtNgayTao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNgayTao.Margin = new System.Windows.Forms.Padding(4);
             this.txtNgayTao.Name = "txtNgayTao";
             this.txtNgayTao.Size = new System.Drawing.Size(211, 22);
             this.txtNgayTao.TabIndex = 6;
@@ -135,7 +136,7 @@
             // txtNhaCC
             // 
             this.txtNhaCC.Location = new System.Drawing.Point(148, 90);
-            this.txtNhaCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtNhaCC.Name = "txtNhaCC";
             this.txtNhaCC.Size = new System.Drawing.Size(199, 22);
             this.txtNhaCC.TabIndex = 5;
@@ -154,7 +155,7 @@
             // 
             this.txtMaBh.Enabled = false;
             this.txtMaBh.Location = new System.Drawing.Point(148, 30);
-            this.txtMaBh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaBh.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaBh.Name = "txtMaBh";
             this.txtMaBh.Size = new System.Drawing.Size(199, 22);
             this.txtMaBh.TabIndex = 0;
@@ -193,7 +194,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1019, 382);
@@ -204,9 +205,9 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(16, 228);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1035, 417);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
@@ -227,40 +228,52 @@
             // 
             // btnSua
             // 
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(585, 21);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(123, 41);
+            this.btnSua.Size = new System.Drawing.Size(99, 41);
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(334, 21);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(125, 41);
+            this.btnXoa.Size = new System.Drawing.Size(112, 41);
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(834, 21);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(830, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 41);
+            this.button4.Size = new System.Drawing.Size(103, 41);
             this.button4.TabIndex = 10;
             this.button4.Text = "Hủy";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnnThem
             // 
+            this.btnnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnnThem.Image")));
+            this.btnnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnThem.Location = new System.Drawing.Point(84, 21);
             this.btnnThem.Name = "btnnThem";
-            this.btnnThem.Size = new System.Drawing.Size(128, 41);
+            this.btnnThem.Size = new System.Drawing.Size(113, 41);
             this.btnnThem.TabIndex = 0;
             this.btnnThem.Text = "Thêm";
+            this.btnnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnThem.UseVisualStyleBackColor = true;
             this.btnnThem.Click += new System.EventHandler(this.btnnThem_Click);
             // 
@@ -272,7 +285,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmWarrantyPolicies";
             this.Text = "frmWarrantyPolicies";
             this.Load += new System.EventHandler(this.frmWarrantyPolicies_Load);
