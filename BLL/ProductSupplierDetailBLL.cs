@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using DTO.ModelHelp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace BLL
         {
             
         }
-
+        public List<ProductOfSupplier> productOfSupplier(int supplierId)
+        {
+            return productSupplierDetailDAL.productOfSupplier(supplierId);
+        }
         public List<ProductSupplierDetail> GetAllProductSupplierDetails()
         {
             return productSupplierDetailDAL.GetAllProductSupplierDetails();

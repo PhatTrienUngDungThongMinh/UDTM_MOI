@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using KeyLibrary;
+using System.Drawing.Imaging;
+using System.IO;
 namespace DoAnUDTM
 {
     public partial class frmProductCategorization : Form
     {
         CategoryBLL category = new CategoryBLL();
+        CloudinaryService cloud = new CloudinaryService();
         public frmProductCategorization()
         {
             InitializeComponent();
@@ -42,6 +45,39 @@ namespace DoAnUDTM
                 txtTenDM.Text = row.Cells["CategoryName"].Value.ToString();
                 txtCreate.Text = row.Cells["createdAt"].Value.ToString();
                 txtupdate.Text = row.Cells["updatedAt"].Value.ToString();
+                if (row.Cells["pathImg"] != null && row.Cells["pathImg"].Value != null)
+                {
+                    string imageUrl = row.Cells["pathImg"].Value.ToString();
+                    if (!string.IsNullOrEmpty(imageUrl))
+                    {
+                        try
+                        {
+                            // Tải ảnh từ URL
+                            using (var wc = new System.Net.WebClient())
+                            {
+                                byte[] data = wc.DownloadData(imageUrl);
+                                using (var ms = new System.IO.MemoryStream(data))
+                                {
+                                    pictureBox1.Image = Image.FromStream(ms);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Không thể tải ảnh: {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        // Nếu không có URL ảnh, có thể đặt một ảnh mặc định hoặc xóa ảnh cũ
+                        pictureBox1.Image = null;
+                    }
+                }
+                else
+                {
+                    // Nếu cột ảnh không có, xóa ảnh cũ nếu có
+                    pictureBox1.Image = null;
+                }
             }
         }
 
@@ -62,16 +98,44 @@ namespace DoAnUDTM
                         return;
                     }
 
+                    string imgUrl = null;
+
+                    if (pictureBox1.Image != null)
+                    {
+                        string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".jpg");
+                        pictureBox1.Image.Save(tempFilePath, ImageFormat.Jpeg);
+
+                        try
+                        {
+                            imgUrl = cloud.UploadImg(tempFilePath, "categories"); // "categories" là tên thư mục trên Cloudinary, bạn có thể thay đổi
+                        }
+                        catch (Exception uploadEx)
+                        {
+                            MessageBox.Show($"Tải ảnh lên Cloudinary thất bại: {uploadEx.Message}");
+                            return;
+                        }
+                        finally
+                        {
+                            if (File.Exists(tempFilePath))
+                            {
+                                File.Delete(tempFilePath);
+                            }
+                        }
+                    }
+
                     var newCategory = new DTO.Category
                     {
                         CategoryName = txtTenDM.Text,
+                        pathImg = imgUrl,  
                         createdAt = DateTime.Now,
                         updatedAt = DateTime.Now
                     };
 
-                    category.AddCategory(newCategory);
+                    category.AddCategory(newCategory); 
                     MessageBox.Show("Thêm danh mục thành công!");
                     LoadCategories();
+                    txtTenDM.Clear();
+                    pictureBox1.Image = null;
                 }
             }
             catch (Exception ex)
@@ -168,6 +232,18 @@ namespace DoAnUDTM
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"; // Chỉ cho phép chọn file ảnh
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                pictureBox1.Image = Image.FromFile(filePath);
             }
         }
     }

@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,9 @@ namespace BLL
             return deliveryReceiptDAL.GetAllDeliveryReceipts();
         }
 
-        public void AddDeliveryReceipt(DeliveryReceipt receipt)
+        public void AddDeliveryReceipt(DeliveryReceipt receipt, BindingList<DeliveryReceiptDetail> de)
         {
-            if (receipt.DeliveryDate == default(DateTime))
-            {
-                throw new ArgumentException("Ngày giao hàng không hợp lệ.");
-            }
-
-            deliveryReceiptDAL.AddDeliveryReceipt(receipt);
+            deliveryReceiptDAL.AddDeliveryReceipt(receipt,de);
         }
 
         public void UpdateDeliveryReceipt(DeliveryReceipt receipt)

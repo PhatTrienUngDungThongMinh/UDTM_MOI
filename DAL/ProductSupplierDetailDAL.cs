@@ -1,4 +1,5 @@
 ﻿using DTO;
+using DTO.ModelHelp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,20 @@ namespace DAL
         public ProductSupplierDetailDAL()
         {
             db = new DBDataContext();
+        }
+
+
+        public List<ProductOfSupplier> productOfSupplier(int supplierId)
+        {
+            var products = db.ProductSupplierDetails
+                                    .Where(psd => psd.SupplierID == supplierId)
+                                    .Select(psd => new ProductOfSupplier
+                                    {
+                                        IdSP = psd.Product.id,
+                                        ProductName =psd.Product.ProductName
+                                    })
+                                    .ToList();
+            return products;
         }
 
         public List<ProductSupplierDetail> GetAllProductSupplierDetails()

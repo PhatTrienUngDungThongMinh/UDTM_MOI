@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,32 @@ namespace DAL
         {
             db = new DBDataContext();
         }
+        
 
         public List<DeliveryReceipt> GetAllDeliveryReceipts()
         {
             return db.DeliveryReceipts.ToList();
         }
 
-        public void AddDeliveryReceipt(DeliveryReceipt receipt)
+        public void AddDeliveryReceipt(DeliveryReceipt receipt, BindingList<DeliveryReceiptDetail> deli)
         {
-            db.DeliveryReceipts.InsertOnSubmit(receipt);
-            db.SubmitChanges();
+            try
+            {
+                db.DeliveryReceipts.InsertOnSubmit(receipt);
+                db.SubmitChanges(); 
+
+                foreach (var detail in deli)
+                {
+                    detail.ReceiptID = receipt.id; 
+                    db.DeliveryReceiptDetails.InsertOnSubmit(detail);
+                }
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while adding delivery receipt: {ex.Message}");
+                throw; 
+            }
         }
 
         public void UpdateDeliveryReceipt(DeliveryReceipt receipt)
