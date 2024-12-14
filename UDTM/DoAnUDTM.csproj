@@ -105,12 +105,6 @@
     <Compile Include="frmOrderManagement.Designer.cs">
       <DependentUpon>frmOrderManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPeriodicReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPeriodicReport.Designer.cs">
-      <DependentUpon>frmPeriodicReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmProductCategorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +122,6 @@
     </Compile>
     <Compile Include="frmRoleManagement.Designer.cs">
       <DependentUpon>frmRoleManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSale.Designer.cs">
-      <DependentUpon>frmSale.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWarrantyPolicies.cs">
       <SubType>Form</SubType>
@@ -178,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrderManagement.resx">
       <DependentUpon>frmOrderManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPeriodicReport.resx">
-      <DependentUpon>frmPeriodicReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductCategorization.resx">
       <DependentUpon>frmProductCategorization.cs</DependentUpon>
@@ -227,6 +212,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{746cb63d-85de-48ad-916b-fc81211e26bd}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeyLibrary\KeyLibrary.csproj">
+      <Project>{b0e5ba5f-99f8-4b72-94ef-57a3fc3d4d7f}</Project>
+      <Name>KeyLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,9 +6,9 @@ namespace KeyLibrary
 {
     public class CloudinaryService
     {
-        private readonly string ApiSecret = "iI8hy9yP-PCNgFOaTj4GXmSbkkg";
-        private readonly string CloudName = "UDTM";
-        private readonly string ApiKey = "994788921519568";
+        private readonly string ApiSecret = "Cej1b-aVqPXkYceJ9EPCQ9qUtwc";
+        private readonly string CloudName = "dykzmgsph";
+        private readonly string ApiKey = "973324733586723";
 
         private readonly Cloudinary _cloudinary;
 
@@ -35,7 +35,6 @@ namespace KeyLibrary
 
             if (uploadResult.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                // Trả về URL của ảnh
                 return uploadResult.Url.ToString();
             }
             else
