@@ -1,0 +1,26 @@
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\obj\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\obj\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DTO\bin\Debug\DTO.dll.config
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\bin\Debug\DTO.dll.config
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\bin\Debug\DTO.dll
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\bin\Debug\DTO.pdb
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\obj\Debug\DTO.dll
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DTO\obj\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\obj\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\obj\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DTO\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\obj\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DTO\obj\Debug\DTO.pdb

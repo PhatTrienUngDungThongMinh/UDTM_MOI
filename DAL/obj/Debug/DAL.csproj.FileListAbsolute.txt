@@ -1,0 +1,38 @@
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\bin\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\bin\Debug\DAL.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\bin\Debug\DTO.dll.config
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\obj\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\Project\UDTM\DoAnUDTM\DAL\obj\Debug\DAL.pdb
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\bin\Debug\DAL.dll
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\bin\Debug\DAL.pdb
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\bin\Debug\DTO.dll
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\bin\Debug\DTO.pdb
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\bin\Debug\DTO.dll.config
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\obj\Debug\DAL.dll
+C:\HocTap\Hocki7\PTPMUDTM\DoAn\UDTM\DAL\obj\Debug\DAL.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\bin\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\bin\Debug\DAL.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\obj\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\xam\aa\UDTM\DAL\obj\Debug\DAL.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\bin\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\bin\Debug\DAL.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\bin\Debug\DTO.dll
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\bin\Debug\DTO.pdb
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\obj\Debug\DAL.dll
+C:\Users\tjnk1\OneDrive\Máy tính\UDTM\DAL\obj\Debug\DAL.pdb
