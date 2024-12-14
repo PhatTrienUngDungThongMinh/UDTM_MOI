@@ -24,6 +24,7 @@ namespace DoAnUDTM
             employee = em;
             positions = pos;
             InitializeComponent();
+            txtNameEmployee.Text = em.FullName;
             ApplyPermissions();
         }
 
@@ -200,16 +201,21 @@ namespace DoAnUDTM
             OpenChildForm(dm);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmPeriodicReport pm = new frmPeriodicReport();
-            OpenChildForm(pm);
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             frmRoleManagement rm = new frmRoleManagement();
             OpenChildForm(rm);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmManufacturers mu = new frmManufacturers();
+            OpenChildForm(mu);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

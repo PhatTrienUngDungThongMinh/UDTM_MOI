@@ -50,18 +50,21 @@ namespace DoAnUDTM
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsDanhMuc)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(-15, 332);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(-11, 270);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(12, 25);
+            this.button6.Size = new System.Drawing.Size(9, 20);
             this.button6.TabIndex = 9;
             this.button6.Text = "Thêm";
             this.button6.UseVisualStyleBackColor = true;
@@ -69,11 +72,9 @@ namespace DoAnUDTM
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.DsDanhMuc);
-            this.groupBox3.Location = new System.Drawing.Point(8, 213);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(6, 173);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1080, 444);
+            this.groupBox3.Size = new System.Drawing.Size(810, 361);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Dan h Mục";
@@ -81,21 +82,19 @@ namespace DoAnUDTM
             // DsDanhMuc
             // 
             this.DsDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DsDanhMuc.Location = new System.Drawing.Point(8, 23);
-            this.DsDanhMuc.Margin = new System.Windows.Forms.Padding(4);
+            this.DsDanhMuc.Location = new System.Drawing.Point(6, 19);
             this.DsDanhMuc.Name = "DsDanhMuc";
             this.DsDanhMuc.RowHeadersWidth = 51;
-            this.DsDanhMuc.Size = new System.Drawing.Size(1072, 414);
+            this.DsDanhMuc.Size = new System.Drawing.Size(804, 336);
             this.DsDanhMuc.TabIndex = 0;
             // 
             // btnSua
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(598, 15);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Location = new System.Drawing.Point(448, 12);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 39);
+            this.btnSua.Size = new System.Drawing.Size(81, 32);
             this.btnSua.TabIndex = 15;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,10 +105,9 @@ namespace DoAnUDTM
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(846, 15);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(634, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 39);
+            this.button4.Size = new System.Drawing.Size(82, 32);
             this.button4.TabIndex = 14;
             this.button4.Text = "Hủy";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,10 +117,9 @@ namespace DoAnUDTM
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(351, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Location = new System.Drawing.Point(263, 12);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(107, 39);
+            this.btnXoa.Size = new System.Drawing.Size(80, 32);
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,10 +130,9 @@ namespace DoAnUDTM
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(101, 13);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Location = new System.Drawing.Point(76, 11);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(110, 39);
+            this.btnThem.Size = new System.Drawing.Size(82, 32);
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,11 +145,9 @@ namespace DoAnUDTM
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.btnXoa);
-            this.groupBox2.Location = new System.Drawing.Point(16, 677);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 550);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1072, 60);
+            this.groupBox2.Size = new System.Drawing.Size(804, 49);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tác Vụ";
@@ -161,37 +155,33 @@ namespace DoAnUDTM
             // txtMaDM
             // 
             this.txtMaDM.Enabled = false;
-            this.txtMaDM.Location = new System.Drawing.Point(139, 60);
-            this.txtMaDM.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaDM.Location = new System.Drawing.Point(104, 49);
             this.txtMaDM.Name = "txtMaDM";
-            this.txtMaDM.Size = new System.Drawing.Size(199, 22);
+            this.txtMaDM.Size = new System.Drawing.Size(150, 20);
             this.txtMaDM.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã danh mục";
             // 
             // txtTenDM
             // 
-            this.txtTenDM.Location = new System.Drawing.Point(139, 124);
-            this.txtTenDM.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDM.Location = new System.Drawing.Point(104, 101);
             this.txtTenDM.Name = "txtTenDM";
-            this.txtTenDM.Size = new System.Drawing.Size(199, 22);
+            this.txtTenDM.Size = new System.Drawing.Size(150, 20);
             this.txtTenDM.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên danh mục";
             // 
@@ -205,11 +195,9 @@ namespace DoAnUDTM
             this.groupBox1.Controls.Add(this.txtTenDM);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtMaDM);
-            this.groupBox1.Location = new System.Drawing.Point(15, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(11, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(739, 215);
+            this.groupBox1.Size = new System.Drawing.Size(619, 175);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Danh Mục";
@@ -217,63 +205,77 @@ namespace DoAnUDTM
             // txtupdate
             // 
             this.txtupdate.Enabled = false;
-            this.txtupdate.Location = new System.Drawing.Point(480, 124);
-            this.txtupdate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtupdate.Location = new System.Drawing.Point(360, 101);
             this.txtupdate.Name = "txtupdate";
-            this.txtupdate.Size = new System.Drawing.Size(208, 22);
+            this.txtupdate.Size = new System.Drawing.Size(157, 20);
             this.txtupdate.TabIndex = 10;
             // 
             // txtCreate
             // 
             this.txtCreate.Enabled = false;
-            this.txtCreate.Location = new System.Drawing.Point(480, 60);
-            this.txtCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCreate.Location = new System.Drawing.Point(360, 49);
             this.txtCreate.Name = "txtCreate";
-            this.txtCreate.Size = new System.Drawing.Size(208, 22);
+            this.txtCreate.Size = new System.Drawing.Size(157, 20);
             this.txtCreate.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(387, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(290, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "UpdateAt";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(392, 64);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(294, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "CreateAt";
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(761, 2);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Location = new System.Drawing.Point(636, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(327, 215);
+            this.groupBox4.Size = new System.Drawing.Size(180, 175);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hình Ảnh";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(63, 142);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Thay đổi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(34, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmProductCategorization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 766);
+            this.ClientSize = new System.Drawing.Size(838, 622);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProductCategorization";
             this.Text = "frmProductCategorization";
             this.Load += new System.EventHandler(this.frmProductCategorization_Load);
@@ -282,6 +284,8 @@ namespace DoAnUDTM
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +309,7 @@ namespace DoAnUDTM
         private TextBox txtCreate;
         private Label label3;
         private Label label4;
+        private Button button1;
+        private PictureBox pictureBox1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using KeyLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Imaging;
+using System.IO;
 namespace DoAnUDTM
 {
     public partial class frmProductManagement : Form
     {
+        CloudinaryService cloud = new CloudinaryService();
+        ProductBLL productBLL = new ProductBLL();
         public frmProductManagement()
         {
             InitializeComponent();
@@ -75,22 +79,122 @@ namespace DoAnUDTM
                 cbbBaoHanh.SelectedValue = row.Cells["WarrantyPolicyID"].Value;
                 cbbHangSX.SelectedValue = row.Cells["ManufacturerID"].Value;
                 cbbNuocXX.SelectedValue = row.Cells["CountryID"].Value;
+                if (row.Cells["RepresentativeImage"] != null && row.Cells["RepresentativeImage"].Value != null)
+                {
+                    string imageUrl = row.Cells["RepresentativeImage"].Value.ToString();
+                    if (!string.IsNullOrEmpty(imageUrl))
+                    {
+                        try
+                        {
+                            // Tải ảnh từ URL
+                            using (var wc = new System.Net.WebClient())
+                            {
+                                byte[] data = wc.DownloadData(imageUrl);
+                                using (var ms = new System.IO.MemoryStream(data))
+                                {
+                                    pictureBox1.Image = System.Drawing.Image.FromStream(ms);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Không thể tải ảnh: {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        // Nếu không có URL ảnh, có thể đặt một ảnh mặc định hoặc xóa ảnh cũ
+                        pictureBox1.Image = null;
+                    }
+                }
+                else
+                {
+                    // Nếu cột ảnh không có, xóa ảnh cũ nếu có
+                    pictureBox1.Image = null;
+                }
             }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var result = MessageBox.Show("Bạn có chắc chắn muốn thêm sản phẩm này không?",
+                                            "Xác nhận",
+                                            MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question);
 
-            txtMaSP.Clear();
-            txtTenSP.Clear();
-            txtGiaGoc.Clear();
-            txtGiaGiam.Clear();
-            txtTonKho.Clear();
-            txtMoTa.Clear();
+                if (result == DialogResult.Yes)
+                {
+                    if (string.IsNullOrWhiteSpace(txtTenSP.Text))
+                    {
+                        MessageBox.Show("Tên không được để trống.");
+                        return;
+                    }
 
-            cbbDanhMuc.SelectedIndex = 0;
-            cbbBaoHanh.SelectedIndex = 0;
-            cbbHangSX.SelectedIndex = 0;
-            cbbNuocXX.SelectedIndex = 0;
+                    string imgUrl = null;
+
+                    if (pictureBox1.Image != null)
+                    {
+                        string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".jpg");
+                        pictureBox1.Image.Save(tempFilePath, ImageFormat.Jpeg);
+
+                        try
+                        {
+                            imgUrl = cloud.UploadImg(tempFilePath, "categories"); // "categories" là tên thư mục trên Cloudinary, bạn có thể thay đổi
+                        }
+                        catch (Exception uploadEx)
+                        {
+                            MessageBox.Show($"Tải ảnh lên Cloudinary thất bại: {uploadEx.Message}");
+                            return;
+                        }
+                        finally
+                        {
+                            if (File.Exists(tempFilePath))
+                            {
+                                File.Delete(tempFilePath);
+                            }
+                        }
+                    }
+
+                    var newProduct = new DTO.Product
+                    {
+                        CategoryID = Convert.ToInt32(cbbDanhMuc.SelectedValue),
+                        ManufacturerID = Convert.ToInt32(cbbHangSX.SelectedValue),
+                        ProductName = txtTenSP.Text,
+                        ListedPrice = Convert.ToInt32(txtGiaGoc.Text),
+                        CountryID = Convert.ToInt32(cbbNuocXX.SelectedValue),
+                        WarrantyPolicyID = Convert.ToInt32(cbbBaoHanh.SelectedValue),
+                        createdAt = DateTime.Now,
+                        updatedAt = DateTime.Now,
+                        Stock = 0,
+                        RepresentativeImage = imgUrl,
+                        Sold = 0,
+                        Status = "Active",
+                        Description = txtMoTa.Text,
+                        PromotionalPrice = Convert.ToInt32(txtGiaGiam.Text)
+                    };
+
+                    productBLL.AddProduct(newProduct);
+                    MessageBox.Show("Thêm sản phẩm thành công!");
+                    pictureBox1.Image = null;
+                    txtMaSP.Clear();
+                    txtTenSP.Clear();
+                    txtGiaGoc.Clear();
+                    txtGiaGiam.Clear();
+                    txtTonKho.Clear();
+                    txtMoTa.Clear();
+
+                    cbbDanhMuc.SelectedIndex = 0;
+                    cbbBaoHanh.SelectedIndex = 0;
+                    cbbHangSX.SelectedIndex = 0;
+                    cbbNuocXX.SelectedIndex = 0;
+                    LoadProducts();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("them that bai");
+            }
 
         }
 
@@ -207,5 +311,16 @@ namespace DoAnUDTM
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                pictureBox1.Image = System.Drawing.Image.FromFile(filePath);
+            }
+        }
     }
 }
