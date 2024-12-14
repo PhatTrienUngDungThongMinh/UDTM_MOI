@@ -123,11 +123,11 @@
     <Compile Include="frmRoleManagement.Designer.cs">
       <DependentUpon>frmRoleManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShippingManagement.cs">
+    <Compile Include="frmSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShippingManagement.Designer.cs">
-      <DependentUpon>frmShippingManagement.cs</DependentUpon>
+    <Compile Include="frmSale.Designer.cs">
+      <DependentUpon>frmSale.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWarrantyPolicies.cs">
       <SubType>Form</SubType>

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DoAnUDTM
+namespace UDTM
 {
-    public partial class frmShippingManagement : Form
+    public partial class frmSale : Form
     {
-        public frmShippingManagement()
+        public frmSale()
         {
             InitializeComponent();
         }

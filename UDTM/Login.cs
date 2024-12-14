@@ -27,7 +27,7 @@ namespace DoAnUDTM
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //authentication.ResetPasswordToUsername(5);
+            authentication.ResetPasswordToUsername(1);
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
                 MessageBox.Show("Không được bỏ trống " + lblUsername.Text.ToLower(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
