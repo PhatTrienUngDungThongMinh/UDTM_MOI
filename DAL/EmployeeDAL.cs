@@ -95,7 +95,9 @@ namespace DAL
             var employee = db.Employees.SingleOrDefault(e => e.id == employeeId);
             if (employee != null)
             {
-                db.Employees.DeleteOnSubmit(employee);
+                employee.IsDeleted = true;
+                employee.updatedAt = DateTime.Now;
+
                 db.SubmitChanges();
             }
             else
@@ -103,5 +105,6 @@ namespace DAL
                 throw new Exception("Employee not found");
             }
         }
+
     }
 }

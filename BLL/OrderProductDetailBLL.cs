@@ -21,7 +21,14 @@ namespace BLL
         {
             return orderProductDetailDAL.GetAllOrderProductDetails();
         }
-
+        public List<OrderProductDetail> GetOrderProductsByOrderId(int orderId)
+        {
+            return orderProductDetailDAL.GetOrderProductsByOrderId(orderId);
+        }
+        public Product GetProductById(int productId)
+        {
+            return orderProductDetailDAL.GetProductById(productId);
+        }
         public void AddOrderProductDetail(OrderProductDetail orderProductDetail)
         {
             if (orderProductDetail.Quantity <= 0)

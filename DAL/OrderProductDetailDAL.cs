@@ -20,7 +20,16 @@ namespace DAL
         {
             return db.OrderProductDetails.ToList();
         }
-
+        public List<OrderProductDetail> GetOrderProductsByOrderId(int orderId)
+        {
+            return db.OrderProductDetails
+                     .Where(o => o.OrderID == orderId)
+                     .ToList();
+        }
+        public Product GetProductById(int productId)
+        {
+            return db.Products.SingleOrDefault(p => p.id == productId);
+        }
         public void AddOrderProductDetail(OrderProductDetail orderProductDetail)
         {
             db.OrderProductDetails.InsertOnSubmit(orderProductDetail);
