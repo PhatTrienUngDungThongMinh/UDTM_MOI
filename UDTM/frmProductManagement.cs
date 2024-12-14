@@ -97,7 +97,45 @@ namespace DoAnUDTM
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            
+            DialogResult result = MessageBox.Show("Bạn có muốn lưu những thay đổi này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(txtMaSP.Text))
+                    {
+                        MessageBox.Show("Vui lòng chọn sản phẩm cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    ProductBLL productBLL = new ProductBLL();
+                    Product updatedProduct = new Product
+                    {
+                        id = int.Parse(txtMaSP.Text),
+                        ProductName = txtTenSP.Text.Trim(),
+                        ListedPrice = decimal.Parse(txtGiaGoc.Text),
+                        PromotionalPrice = decimal.Parse(txtGiaGiam.Text),
+                        Stock = int.Parse(txtTonKho.Text),
+                        Sold = 0,
+                        Status = "Active",
+                        Description = txtMoTa.Text.Trim(),
+                        CategoryID = (int)cbbDanhMuc.SelectedValue,
+                        WarrantyPolicyID = (int)cbbBaoHanh.SelectedValue,
+                        ManufacturerID = (int)cbbHangSX.SelectedValue,
+                        CountryID = (int)cbbNuocXX.SelectedValue,
+                        updatedAt = DateTime.Now,
+                    };
+
+                    productBLL.UpdateProduct(updatedProduct);
+                    MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadProducts();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
 
@@ -111,12 +149,21 @@ namespace DoAnUDTM
                     return;
                 }
 
-                int productId = int.Parse(txtMaSP.Text);
-                ProductBLL productBLL = new ProductBLL();
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                productBLL.DeleteProduct(productId);
-                MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadProducts(); 
+                if (result == DialogResult.Yes)
+                {
+                    int productId = int.Parse(txtMaSP.Text);
+                    ProductBLL productBLL = new ProductBLL();
+
+                    productBLL.DeleteProduct(productId);
+                    MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadProducts();
+                }
+                else
+                {
+                    return;
+                }
             }
             catch (Exception ex)
             {
