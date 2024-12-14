@@ -33,6 +33,8 @@ namespace DoAnUDTM
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductManagement));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DsSanPham = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
@@ -57,19 +59,17 @@ namespace DoAnUDTM
             this.cbbHangSX = new System.Windows.Forms.ComboBox();
             this.cbbBaoHanh = new System.Windows.Forms.ComboBox();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
+            this.txtTonKho = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTonKho = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsSanPham)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -83,12 +83,31 @@ namespace DoAnUDTM
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hình Ảnh";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(78, 188);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "thay đổi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(34, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.DsSanPham);
             this.groupBox3.Location = new System.Drawing.Point(10, 244);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(794, 239);
+            this.groupBox3.Size = new System.Drawing.Size(794, 310);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách sản phẩm";
@@ -96,10 +115,10 @@ namespace DoAnUDTM
             // DsSanPham
             // 
             this.DsSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DsSanPham.Location = new System.Drawing.Point(5, 19);
+            this.DsSanPham.Location = new System.Drawing.Point(9, 19);
             this.DsSanPham.Name = "DsSanPham";
             this.DsSanPham.RowHeadersWidth = 51;
-            this.DsSanPham.Size = new System.Drawing.Size(783, 214);
+            this.DsSanPham.Size = new System.Drawing.Size(783, 285);
             this.DsSanPham.TabIndex = 0;
             this.DsSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DsSanPham_CellClick);
             // 
@@ -161,7 +180,7 @@ namespace DoAnUDTM
             this.groupBox4.Controls.Add(this.btnThem);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.btnXoa);
-            this.groupBox4.Location = new System.Drawing.Point(10, 486);
+            this.groupBox4.Location = new System.Drawing.Point(10, 560);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(794, 50);
             this.groupBox4.TabIndex = 8;
@@ -305,7 +324,7 @@ namespace DoAnUDTM
             // 
             this.cbbNuocXX.FormattingEnabled = true;
             this.cbbNuocXX.Location = new System.Drawing.Point(349, 128);
-            this.cbbNuocXX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbNuocXX.Margin = new System.Windows.Forms.Padding(2);
             this.cbbNuocXX.Name = "cbbNuocXX";
             this.cbbNuocXX.Size = new System.Drawing.Size(186, 21);
             this.cbbNuocXX.TabIndex = 39;
@@ -314,7 +333,7 @@ namespace DoAnUDTM
             // 
             this.cbbHangSX.FormattingEnabled = true;
             this.cbbHangSX.Location = new System.Drawing.Point(349, 95);
-            this.cbbHangSX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbHangSX.Margin = new System.Windows.Forms.Padding(2);
             this.cbbHangSX.Name = "cbbHangSX";
             this.cbbHangSX.Size = new System.Drawing.Size(186, 21);
             this.cbbHangSX.TabIndex = 38;
@@ -323,7 +342,7 @@ namespace DoAnUDTM
             // 
             this.cbbBaoHanh.FormattingEnabled = true;
             this.cbbBaoHanh.Location = new System.Drawing.Point(349, 57);
-            this.cbbBaoHanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbBaoHanh.Margin = new System.Windows.Forms.Padding(2);
             this.cbbBaoHanh.Name = "cbbBaoHanh";
             this.cbbBaoHanh.Size = new System.Drawing.Size(186, 21);
             this.cbbBaoHanh.TabIndex = 37;
@@ -332,10 +351,17 @@ namespace DoAnUDTM
             // 
             this.cbbDanhMuc.FormattingEnabled = true;
             this.cbbDanhMuc.Location = new System.Drawing.Point(349, 21);
-            this.cbbDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbDanhMuc.Margin = new System.Windows.Forms.Padding(2);
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(186, 21);
             this.cbbDanhMuc.TabIndex = 36;
+            // 
+            // txtTonKho
+            // 
+            this.txtTonKho.Location = new System.Drawing.Point(60, 164);
+            this.txtTonKho.Name = "txtTonKho";
+            this.txtTonKho.Size = new System.Drawing.Size(196, 20);
+            this.txtTonKho.TabIndex = 35;
             // 
             // label6
             // 
@@ -373,37 +399,11 @@ namespace DoAnUDTM
             this.label3.TabIndex = 31;
             this.label3.Text = "Danh mục";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(34, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 156);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(78, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "thay đổi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtTonKho
-            // 
-            this.txtTonKho.Location = new System.Drawing.Point(60, 164);
-            this.txtTonKho.Name = "txtTonKho";
-            this.txtTonKho.Size = new System.Drawing.Size(196, 20);
-            this.txtTonKho.TabIndex = 35;
-            // 
             // frmProductManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 547);
+            this.ClientSize = new System.Drawing.Size(838, 622);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -412,12 +412,12 @@ namespace DoAnUDTM
             this.Text = "frmProductManagement";
             this.Load += new System.EventHandler(this.frmProductManagement_Load);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DsSanPham)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

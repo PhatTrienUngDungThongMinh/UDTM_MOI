@@ -139,16 +139,16 @@ namespace DoAnUDTM
             this.groupBoxPermissions.Controls.Add(this.chkListPermissions);
             this.groupBoxPermissions.Location = new System.Drawing.Point(548, 21);
             this.groupBoxPermissions.Name = "groupBoxPermissions";
-            this.groupBoxPermissions.Size = new System.Drawing.Size(232, 386);
+            this.groupBoxPermissions.Size = new System.Drawing.Size(268, 571);
             this.groupBoxPermissions.TabIndex = 1;
             this.groupBoxPermissions.TabStop = false;
             this.groupBoxPermissions.Text = "Chọn quyền";
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(17, 341);
+            this.cancel.Location = new System.Drawing.Point(32, 521);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(75, 23);
+            this.cancel.Size = new System.Drawing.Size(82, 32);
             this.cancel.TabIndex = 4;
             this.cancel.Text = "Hủy";
             this.cancel.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@ namespace DoAnUDTM
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(140, 341);
+            this.save.Location = new System.Drawing.Point(146, 521);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.Size = new System.Drawing.Size(77, 32);
             this.save.TabIndex = 3;
             this.save.Text = "Lưu ";
             this.save.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@ namespace DoAnUDTM
             this.chkListPermissions.FormattingEnabled = true;
             this.chkListPermissions.Location = new System.Drawing.Point(17, 46);
             this.chkListPermissions.Name = "chkListPermissions";
-            this.chkListPermissions.Size = new System.Drawing.Size(198, 289);
+            this.chkListPermissions.Size = new System.Drawing.Size(232, 454);
             this.chkListPermissions.TabIndex = 0;
             // 
             // groupBox2
@@ -188,7 +188,7 @@ namespace DoAnUDTM
             this.groupBox2.Controls.Add(this.ListPermissions);
             this.groupBox2.Location = new System.Drawing.Point(20, 127);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(522, 280);
+            this.groupBox2.Size = new System.Drawing.Size(522, 465);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách các quyền đã thêm";
@@ -200,13 +200,13 @@ namespace DoAnUDTM
             this.ListPermissions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListPermissions.Location = new System.Drawing.Point(13, 19);
             this.ListPermissions.Name = "ListPermissions";
-            this.ListPermissions.Size = new System.Drawing.Size(490, 239);
+            this.ListPermissions.Size = new System.Drawing.Size(490, 440);
             this.ListPermissions.TabIndex = 0;
             this.ListPermissions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListPermissions_CellClick);
             // 
             // frmRoleManagement
             // 
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(838, 622);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxPermissions);
             this.Controls.Add(this.groupBoxInfo);

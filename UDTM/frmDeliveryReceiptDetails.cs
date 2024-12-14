@@ -88,5 +88,60 @@ namespace UDTM
             public string CreatedBy { get; set; }
             public string UpdatedBy { get; set; }
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+            if (DsPhieuNhap.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một phiếu nhập trước khi lưu trạng thái!",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbbTrangThai.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái trước khi lưu!",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                DataGridViewRow selectedRow = DsPhieuNhap.CurrentRow;
+
+                int receiptId = Convert.ToInt32(selectedRow.Cells["id"].Value);
+
+                string newStatus = cbbTrangThai.SelectedItem.ToString();
+
+                var receiptToUpdate = new DeliveryReceipt
+                {
+                    id = receiptId,
+                    Status = newStatus,
+                    updatedAt = DateTime.Now 
+                };
+
+                delivery.UpdateDeliveryReceipt(receiptToUpdate);
+
+                DsPhieuNhap.DataSource = delivery.GetAllDeliveryReceipts();
+
+                MessageBox.Show("Cập nhật trạng thái phiếu nhập thành công!",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi lưu trạng thái: {ex.Message}",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

@@ -123,5 +123,7 @@ namespace DoAnUDTM
                 txtFullname.Text = "";
             }
         }
+
+
     }
 }
