@@ -49,6 +49,16 @@ namespace DoAnUDTM
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quanlity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promotion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsHoaDon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,9 +79,19 @@ namespace DoAnUDTM
             // 
             // DsHoaDon
             // 
+            this.DsHoaDon.AllowUserToResizeColumns = false;
+            this.DsHoaDon.AllowUserToResizeRows = false;
             this.DsHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DsHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idOrder,
+            this.Customer,
+            this.Status,
+            this.TotalAmount,
+            this.promotion,
+            this.orderDate});
             this.DsHoaDon.Location = new System.Drawing.Point(6, 19);
             this.DsHoaDon.Name = "DsHoaDon";
+            this.DsHoaDon.RowHeadersVisible = false;
             this.DsHoaDon.RowHeadersWidth = 51;
             this.DsHoaDon.Size = new System.Drawing.Size(404, 488);
             this.DsHoaDon.TabIndex = 0;
@@ -161,9 +181,18 @@ namespace DoAnUDTM
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.ProductName,
+            this.Quanlity,
+            this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(332, 308);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -222,9 +251,9 @@ namespace DoAnUDTM
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(9, 77);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Ngày Bán";
+            this.label7.Text = "Ngày Đặt";
             // 
             // label8
             // 
@@ -234,6 +263,66 @@ namespace DoAnUDTM
             this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Mã Hóa Đơn";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ProductID";
+            this.id.HeaderText = "Mã sản phẩm";
+            this.id.Name = "id";
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "Tên sản phẩm";
+            this.ProductName.Name = "ProductName";
+            // 
+            // Quanlity
+            // 
+            this.Quanlity.DataPropertyName = "quanlity";
+            this.Quanlity.HeaderText = "Số lượng";
+            this.Quanlity.Name = "Quanlity";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "price";
+            this.Price.HeaderText = "Giá tiền";
+            this.Price.Name = "Price";
+            // 
+            // idOrder
+            // 
+            this.idOrder.DataPropertyName = "id";
+            this.idOrder.HeaderText = "Mã hóa đơn";
+            this.idOrder.Name = "idOrder";
+            // 
+            // Customer
+            // 
+            this.Customer.DataPropertyName = "CustomerID";
+            this.Customer.HeaderText = "Khách hàng";
+            this.Customer.Name = "Customer";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "OrderStatus";
+            this.Status.HeaderText = "Trạng thái";
+            this.Status.Name = "Status";
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
+            this.TotalAmount.HeaderText = "Tổng tiền đơn hàng";
+            this.TotalAmount.Name = "TotalAmount";
+            // 
+            // promotion
+            // 
+            this.promotion.DataPropertyName = "PromotionID";
+            this.promotion.HeaderText = "Mã khuyễn mãi (nếu có) ";
+            this.promotion.Name = "promotion";
+            // 
+            // orderDate
+            // 
+            this.orderDate.DataPropertyName = "OrderDate";
+            this.orderDate.HeaderText = "Thời gian đặt hàng";
+            this.orderDate.Name = "orderDate";
             // 
             // frmOrderManagement
             // 
@@ -277,5 +366,15 @@ namespace DoAnUDTM
         private TextBox txtTongTien;
         private ComboBox cbbTrangThai;
         private TextBox txtTimKiem;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn Quanlity;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn idOrder;
+        private DataGridViewTextBoxColumn Customer;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn TotalAmount;
+        private DataGridViewTextBoxColumn promotion;
+        private DataGridViewTextBoxColumn orderDate;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using DTO.ModelHelp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,11 @@ namespace DoAnUDTM
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
-            DsHoaDon.DataSource = orderCustomer.GetAllOrderCustomers();
+            DsHoaDon.AutoGenerateColumns = false;
+            List<OrderCustomer> order = orderCustomer.GetAllOrderCustomers();
+            order = order.Where(o => o.OrderStatus == "Chờ xác nhận" || o.OrderStatus == "Đã xác nhận"||
+                                      o.OrderStatus == "Chờ giao hàng").ToList();
+            DsHoaDon.DataSource = order;
             DsHoaDon.CellClick += DsHoaDon_CellClick;
         }
 
@@ -33,68 +38,40 @@ namespace DoAnUDTM
             {
                 DataGridViewRow selectedRow = DsHoaDon.Rows[e.RowIndex];
 
-                int orderId = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                int orderId = Convert.ToInt32(selectedRow.Cells["idOrder"].Value);
 
                 var orderProducts = productDetail.GetOrderProductsByOrderId(orderId);
 
-       
-                var productDetails = new List<ProductDetails>();
+
+                List<DetailOrder> productDetailsOrder = new List<DetailOrder>();
 
                 foreach (var orderProduct in orderProducts)
                 {
-
-                    var product = productDetail.GetProductById(orderProduct.ProductID);
+                    Product product = productDetail.GetProductById(orderProduct.ProductID);
 
                     if (product != null)
                     {
-                        productDetails.Add(new ProductDetails
-                        {
-                            ProductID = product.id,
-                            ProductName = product.ProductName,
-                            ListedPrice = product.ListedPrice,
-                            Stock = product.Stock,
-                            Description = product.Description,
-                            PromotionalPrice = product.PromotionalPrice ?? 0,
-                            Status = product.Status,
-                            Sold = product.Sold ?? 0,  
-                            IsDeleted = product.IsDeleted ?? false,  
-                            CategoryID = product.CategoryID ?? 0,  
-                            ManufacturerID = product.ManufacturerID ?? 0, 
-                            WarrantyPolicyID = product.WarrantyPolicyID ?? 0,  
-                            CountryID = product.CountryID ?? 0,
-                            CreatedBy = product.CreatedBy,
-                            UpdatedBy = product.UpdatedBy
-
-                        });
+                        DetailOrder orderDetail = new DetailOrder();
+                        orderDetail.ProductID = orderProduct.ProductID;
+                        orderDetail.ProductName = product.ProductName;
+                        orderDetail.Price = (decimal)product.PromotionalPrice;
+                        orderDetail.Quanlity = orderProduct.Quantity;
+                        productDetailsOrder.Add(orderDetail);
                     }
+
                 }
+                dataGridView1.AutoGenerateColumns = false;
+                
+                dataGridView1.DataSource = productDetailsOrder;
 
-                dataGridView1.DataSource = productDetails;
 
-
-                txtMaHD.Text = selectedRow.Cells["id"].Value?.ToString() ?? string.Empty;
+                txtMaHD.Text = selectedRow.Cells["idOrder"].Value?.ToString() ?? string.Empty;
                 txtNgayBan.Text = selectedRow.Cells["OrderDate"].Value?.ToString() ?? string.Empty;
                 txtTongTien.Text = selectedRow.Cells["TotalAmount"].Value?.ToString() ?? string.Empty;
-                txtTrangThai.Text = selectedRow.Cells["OrderStatus"].Value?.ToString() ?? string.Empty;
+                txtTrangThai.Text = selectedRow.Cells["Status"].Value?.ToString() ?? string.Empty;
+                cbbTrangThai.Text = selectedRow.Cells["Status"].Value?.ToString() ?? string.Empty;
+                UpdateComboBoxItems(txtTrangThai.Text);
             }
-        }
-        public class ProductDetails
-        {
-            public int ProductID { get; set; }
-            public string ProductName { get; set; }
-            public decimal ListedPrice { get; set; }
-            public int Stock { get; set; }
-            public string Description { get; set; }
-            public decimal PromotionalPrice { get; set; }
-            public string Status { get; set; }
-            public int Sold { get; set; }
-            public bool IsDeleted { get; set; }
-            public int CategoryID { get; set; }
-            public int ManufacturerID { get; set; }
-            public int WarrantyPolicyID { get; set; }
-            public int CountryID { get; set; }
-            public string CreatedBy { get; set; }
-            public string UpdatedBy { get; set; }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -139,15 +116,7 @@ namespace DoAnUDTM
             {
                 int orderId = int.Parse(txtMaHD.Text);
                 string newStatus = cbbTrangThai.SelectedItem.ToString();
-
-                var orderToUpdate = new OrderCustomer
-                {
-                    id = orderId,
-                    OrderStatus = newStatus,
-                    updatedAt = DateTime.UtcNow 
-                };
-
-                orderCustomer.UpdateOrderCustomer(orderToUpdate);
+                orderCustomer.UpdateOrderStatus(orderId, newStatus);
 
                 DsHoaDon.DataSource = orderCustomer.GetAllOrderCustomers();
 
@@ -164,6 +133,33 @@ namespace DoAnUDTM
                                 MessageBoxIcon.Error);
             }
         }
+        private void UpdateComboBoxItems(string currentStatus)
+        {
+            cbbTrangThai.Items.Clear();
+
+            if (currentStatus == "Chờ xác nhận")
+            {
+                cbbTrangThai.Items.Add("Đã Hủy");
+                cbbTrangThai.Items.Add("Đã xác nhận");
+            }
+            else if (currentStatus == "Đã xác nhận")
+            {
+                cbbTrangThai.Items.Add("Chờ giao hàng");
+                cbbTrangThai.Items.Add("Đã Hủy");
+            }
+            else if (currentStatus == "Chờ giao hàng")
+            {
+                cbbTrangThai.Items.Add("Hoàn thành");
+                cbbTrangThai.Items.Add("Đã Hủy");
+            }
+            else if (currentStatus == "Đã Hủy" || currentStatus == "Hoàn thành")
+            {
+                cbbTrangThai.Items.Add("Không thay đổi được");
+            }
+
+            cbbTrangThai.Text = currentStatus;
+        }
+
 
 
     }

@@ -27,6 +27,20 @@ namespace DAL
             db.SubmitChanges();
         }
 
+        public void UpdateOrderStatus(int id, string status)
+        {
+            var existingOrder = db.OrderCustomers.SingleOrDefault(o => o.id == id);
+            if (existingOrder != null)
+            {
+                
+                existingOrder.OrderStatus = status;
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("OrderCustomer not found");
+            }
+        }
         public void UpdateOrderCustomer(OrderCustomer orderCustomer)
         {
             var existingOrder = db.OrderCustomers.SingleOrDefault(o => o.id == orderCustomer.id);

@@ -21,8 +21,11 @@ namespace BLL
         {
             return orderCustomerDAL.GetAllOrderCustomers();
         }
-
-        public void AddOrderCustomer(OrderCustomer orderCustomer)
+        public void UpdateOrderStatus(int id, string status)
+        {
+            orderCustomerDAL.UpdateOrderStatus(id, status);
+        }
+            public void AddOrderCustomer(OrderCustomer orderCustomer)
         {
             if (orderCustomer.OrderDate == default(DateTime))
             {

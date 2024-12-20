@@ -210,17 +210,14 @@ namespace UDTM
 
 
                 deliveryReceipt.AddDeliveryReceipt(d, _deliveryReceiptDetails);
-                // Hiển thị thông báo thành công
                 MessageBox.Show("Delivery receipt has been successfully imported!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Reset form và làm mới dữ liệu
                 ResetForm();
                 _deliveryReceiptDetails.Clear();
-                listDSSP.DataSource = null; // Làm mới bảng danh sách sản phẩm
+                listDSSP.DataSource = null;
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
