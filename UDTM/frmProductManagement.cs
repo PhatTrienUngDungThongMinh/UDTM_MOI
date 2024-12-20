@@ -166,6 +166,7 @@ namespace DoAnUDTM
                         WarrantyPolicyID = Convert.ToInt32(cbbBaoHanh.SelectedValue),
                         createdAt = DateTime.Now,
                         updatedAt = DateTime.Now,
+                        IsDeleted = false,
                         Stock = 0,
                         RepresentativeImage = imgUrl,
                         Sold = 0,

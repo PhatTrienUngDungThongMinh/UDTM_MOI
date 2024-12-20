@@ -37,7 +37,7 @@ namespace DoAnUDTM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmDeliveryReceiptDetails fm=new frmDeliveryReceiptDetails();
+            frmImportedGoods fm=new frmImportedGoods();
             fm.ShowDialog();
         }
 

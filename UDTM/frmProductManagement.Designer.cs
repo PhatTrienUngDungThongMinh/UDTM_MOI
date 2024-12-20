@@ -358,10 +358,12 @@ namespace DoAnUDTM
             // 
             // txtTonKho
             // 
+            this.txtTonKho.Enabled = false;
             this.txtTonKho.Location = new System.Drawing.Point(60, 164);
             this.txtTonKho.Name = "txtTonKho";
             this.txtTonKho.Size = new System.Drawing.Size(196, 20);
             this.txtTonKho.TabIndex = 35;
+            this.txtTonKho.Text = "0";
             // 
             // label6
             // 

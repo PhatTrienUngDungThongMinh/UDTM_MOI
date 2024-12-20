@@ -52,13 +52,13 @@ namespace DoAnUDTM
             this.labal22 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateKT = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeNgayBD = new System.Windows.Forms.DateTimePicker();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.txtToida = new System.Windows.Forms.TextBox();
             this.txtGiamgia = new System.Windows.Forms.TextBox();
             this.txtNgayKT = new System.Windows.Forms.TextBox();
-            this.dateTimeNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.dateKT = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsKhuyenMai)).BeginInit();
@@ -130,9 +130,9 @@ namespace DoAnUDTM
             // DsKhuyenMai
             // 
             this.DsKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DsKhuyenMai.Location = new System.Drawing.Point(5, 11);
+            this.DsKhuyenMai.Location = new System.Drawing.Point(5, 31);
             this.DsKhuyenMai.Name = "DsKhuyenMai";
-            this.DsKhuyenMai.Size = new System.Drawing.Size(793, 343);
+            this.DsKhuyenMai.Size = new System.Drawing.Size(793, 323);
             this.DsKhuyenMai.TabIndex = 0;
             // 
             // txtMaKM
@@ -266,6 +266,20 @@ namespace DoAnUDTM
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Khuyến Mãi";
             // 
+            // dateKT
+            // 
+            this.dateKT.Location = new System.Drawing.Point(351, 65);
+            this.dateKT.Name = "dateKT";
+            this.dateKT.Size = new System.Drawing.Size(144, 20);
+            this.dateKT.TabIndex = 26;
+            // 
+            // dateTimeNgayBD
+            // 
+            this.dateTimeNgayBD.Location = new System.Drawing.Point(351, 23);
+            this.dateTimeNgayBD.Name = "dateTimeNgayBD";
+            this.dateTimeNgayBD.Size = new System.Drawing.Size(144, 20);
+            this.dateTimeNgayBD.TabIndex = 25;
+            // 
             // txtSoluong
             // 
             this.txtSoluong.Location = new System.Drawing.Point(351, 109);
@@ -300,20 +314,6 @@ namespace DoAnUDTM
             this.txtNgayKT.Name = "txtNgayKT";
             this.txtNgayKT.Size = new System.Drawing.Size(144, 20);
             this.txtNgayKT.TabIndex = 19;
-            // 
-            // dateTimeNgayBD
-            // 
-            this.dateTimeNgayBD.Location = new System.Drawing.Point(351, 23);
-            this.dateTimeNgayBD.Name = "dateTimeNgayBD";
-            this.dateTimeNgayBD.Size = new System.Drawing.Size(144, 20);
-            this.dateTimeNgayBD.TabIndex = 25;
-            // 
-            // dateKT
-            // 
-            this.dateKT.Location = new System.Drawing.Point(351, 65);
-            this.dateKT.Name = "dateKT";
-            this.dateKT.Size = new System.Drawing.Size(144, 20);
-            this.dateKT.TabIndex = 26;
             // 
             // frmDiscountAndPromotionManagement
             // 
