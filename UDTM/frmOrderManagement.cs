@@ -29,6 +29,7 @@ namespace DoAnUDTM
         }
         private void load()
         {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             DsHoaDon.AutoGenerateColumns = false;
             List<OrderCustomer> order = orderCustomer.GetAllOrderCustomers();
             order = order.Where(o => o.OrderStatus == "Chờ xác nhận" || o.OrderStatus == "Đã xác nhận" ||
@@ -154,7 +155,7 @@ namespace DoAnUDTM
 
             if (currentStatus == "Chờ xác nhận")
             {
-                cbbTrangThai.Items.Add("Hủy đơn");
+                cbbTrangThai.Items.Add("Hủy");
                 cbbTrangThai.Items.Add("Đã xác nhận");
             }
             else if (currentStatus == "Đã xác nhận")
@@ -165,7 +166,7 @@ namespace DoAnUDTM
             {
                 cbbTrangThai.Items.Add("Hoàn thành");
             }
-            else if (currentStatus == "Đã Hủy" || currentStatus == "Hoàn thành")
+            else if (currentStatus == "Hủy" || currentStatus == "Hoàn thành")
             {
                 MessageBox.Show("Đơn hàng đã hoàn tất!");
             }
@@ -178,5 +179,27 @@ namespace DoAnUDTM
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBox1.Text, out int result))
+            {
+                List<OrderCustomer> order = orderCustomer.GetOrderProductsByOrderId(int.Parse(textBox1.Text));
+                DsHoaDon.DataSource = order;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập một số hợp lệ.");
+            }
+            
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            List<OrderCustomer> orders = orderCustomer.GetAllOrderCustomers();
+            string selectedStatus = comboBox1.SelectedItem.ToString();
+
+            List<OrderCustomer> orderfill = orders.Where(o => o.OrderStatus == selectedStatus).ToList();
+            DsHoaDon.DataSource = orderfill;
+        }
     }
 }

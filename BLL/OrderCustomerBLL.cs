@@ -21,7 +21,11 @@ namespace BLL
         {
             return orderCustomerDAL.GetAllOrderCustomers();
         }
-        public void UpdateOrderStatus(int id, string status)
+        public List<OrderCustomer> GetOrderProductsByOrderId(int orderId)
+        {
+            return orderCustomerDAL.GetOrderProductsByOrderId(orderId);
+        }
+            public void UpdateOrderStatus(int id, string status)
         {
             orderCustomerDAL.UpdateOrderStatus(id, status);
         }

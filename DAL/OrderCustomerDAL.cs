@@ -41,6 +41,12 @@ namespace DAL
                 throw new Exception("OrderCustomer not found");
             }
         }
+        public List<OrderCustomer> GetOrderProductsByOrderId(int orderId)
+        {
+            return db.OrderCustomers
+                     .Where(o => o.id == orderId)
+                     .ToList();
+        }
         public void UpdateOrderCustomer(OrderCustomer orderCustomer)
         {
             var existingOrder = db.OrderCustomers.SingleOrDefault(o => o.id == orderCustomer.id);

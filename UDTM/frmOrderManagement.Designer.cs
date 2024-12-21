@@ -34,7 +34,6 @@ namespace DoAnUDTM
             this.gr = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.DsHoaDon = new System.Windows.Forms.DataGridView();
             this.idOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,7 @@ namespace DoAnUDTM
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DsHoaDon)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -105,20 +105,20 @@ namespace DoAnUDTM
             this.label1.TabIndex = 3;
             this.label1.Text = "Mã hóa đơn:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(91, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Chờ xác nhận",
+            "Đã xác nhận",
+            "Chờ giao hàng",
+            "Hoàn thành",
+            "Hủy"});
             this.comboBox1.Location = new System.Drawing.Point(289, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // DsHoaDon
             // 
@@ -387,6 +387,14 @@ namespace DoAnUDTM
             this.label8.TabIndex = 15;
             this.label8.Text = "Mã Hóa Đơn";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(91, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,9 +450,9 @@ namespace DoAnUDTM
         private DataGridViewTextBoxColumn orderDate;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
         private ComboBox comboBox1;
         private TextBox nameCustomer;
         private Label label3;
+        private TextBox textBox1;
     }
 }
