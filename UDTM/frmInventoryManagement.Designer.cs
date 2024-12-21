@@ -49,10 +49,14 @@ namespace DoAnUDTM
             this.button3 = new System.Windows.Forms.Button();
             this.txtMaPN = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DsPhieuNhap)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // DsPhieuNhap
@@ -61,12 +65,15 @@ namespace DoAnUDTM
             this.DsPhieuNhap.Location = new System.Drawing.Point(6, 42);
             this.DsPhieuNhap.Name = "DsPhieuNhap";
             this.DsPhieuNhap.RowHeadersWidth = 51;
-            this.DsPhieuNhap.Size = new System.Drawing.Size(774, 456);
+            this.DsPhieuNhap.Size = new System.Drawing.Size(452, 456);
             this.DsPhieuNhap.TabIndex = 0;
             this.DsPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DsPhieuNhap_CellClick);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.DsPhieuNhap);
             this.groupBox3.Location = new System.Drawing.Point(12, 64);
@@ -235,6 +242,33 @@ namespace DoAnUDTM
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(464, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(316, 288);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(487, 363);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Mã phiếu nhập:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(494, 411);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Nhà cung cấp";
+            // 
             // frmInventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,10 +281,12 @@ namespace DoAnUDTM
             this.Load += new System.EventHandler(this.frmInventoryManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DsPhieuNhap)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +311,8 @@ namespace DoAnUDTM
         private Label label4;
         private TextBox textBox5;
         private Label label5;
+        private Label label7;
+        private Label label6;
+        private DataGridView dataGridView1;
     }
 }

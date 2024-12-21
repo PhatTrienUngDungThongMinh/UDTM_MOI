@@ -59,7 +59,6 @@
     <Compile Include="ProductAttributeDAL.cs" />
     <Compile Include="ProductAttributeDetailDAL.cs" />
     <Compile Include="ProductDAL.cs" />
-    <Compile Include="ProductSupplierDetailDAL.cs" />
     <Compile Include="PromotionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QL_PhanQuyenDAL.cs" />

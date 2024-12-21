@@ -34,6 +34,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listDSSP = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSLNhap = new System.Windows.Forms.TextBox();
             this.txtGiaNhap = new System.Windows.Forms.TextBox();
@@ -49,13 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSanPham = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -130,6 +129,30 @@
             this.listDSSP.Size = new System.Drawing.Size(443, 236);
             this.listDSSP.TabIndex = 0;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã sản phẩm";
+            this.id.Name = "id";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.Name = "Quantity";
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.DataPropertyName = "UnitPrice";
+            this.UnitPrice.HeaderText = "Giá nhập";
+            this.UnitPrice.Name = "UnitPrice";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "Tổng tiền";
+            this.TotalPrice.Name = "TotalPrice";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtSLNhap);
@@ -146,7 +169,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtSanPham);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 51);
@@ -284,15 +306,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Sản phẩm đã chọn:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(234, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -306,36 +319,13 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(55, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
+            this.textBox1.Size = new System.Drawing.Size(252, 20);
             this.textBox1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã sản phẩm";
-            this.id.Name = "id";
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Số lượng";
-            this.Quantity.Name = "Quantity";
-            // 
-            // UnitPrice
-            // 
-            this.UnitPrice.DataPropertyName = "UnitPrice";
-            this.UnitPrice.HeaderText = "Giá nhập";
-            this.UnitPrice.Name = "UnitPrice";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "Tổng tiền";
-            this.TotalPrice.Name = "TotalPrice";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // IdSP
             // 
-            this.IdSP.DataPropertyName = "IdSP";
+            this.IdSP.DataPropertyName = "id";
             this.IdSP.HeaderText = "Mã Sản phẩm";
             this.IdSP.Name = "IdSP";
             // 
@@ -379,7 +369,6 @@
         private System.Windows.Forms.DataGridView listDSSP;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;

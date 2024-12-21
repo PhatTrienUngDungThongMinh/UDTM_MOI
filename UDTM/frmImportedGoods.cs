@@ -15,7 +15,7 @@ namespace UDTM
     public partial class frmImportedGoods : Form
     {
         private readonly SupplierBLL _supplierBLL = new SupplierBLL();
-        private readonly ProductSupplierDetailBLL _productSupplierDetailBLL = new ProductSupplierDetailBLL();
+        private readonly ProductBLL _productBLL = new ProductBLL();
         private readonly BindingList<DeliveryReceiptDetail> _deliveryReceiptDetails = new BindingList<DeliveryReceiptDetail>();
         private readonly DeliveryReceiptBLL deliveryReceipt = new DeliveryReceiptBLL();
         public frmImportedGoods()
@@ -33,7 +33,6 @@ namespace UDTM
                 cmbSupplier.DisplayMember = "SupplierName";
                 cmbSupplier.ValueMember = "Id";
                 cmbSupplier.SelectedIndex = -1;
-
                 listDSSP.DataSource = _deliveryReceiptDetails;
                 listDSSP.AutoGenerateColumns = true;
             }
@@ -49,8 +48,8 @@ namespace UDTM
             {
                 if (cmbSupplier.SelectedValue != null && int.TryParse(cmbSupplier.SelectedValue.ToString(), out int supplierId))
                 {
-                    var products = _productSupplierDetailBLL.productOfSupplier(supplierId);
-                    ListProductSupplier.DataSource = products;
+                    ListProductSupplier.AutoGenerateColumns = false;
+                    ListProductSupplier.DataSource = _productBLL.GetAllProducts();
                     ListProductSupplier.ClearSelection();
                 }
                 else
@@ -220,6 +219,25 @@ namespace UDTM
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<Product> list = _productBLL.GetAllProducts();
+            if (!int.TryParse(textBox1.Text, out _))
+            {
+                MessageBox.Show("Vui lòng nhập mã sản phẩm hợp lệ.");
+            }
+            else
+            {
+                list = list.Where(o => o.id == int.Parse(textBox1.Text)).ToList();
+                if (list.Count > 0)
+                    ListProductSupplier.DataSource = list;
+                else
+                    ListProductSupplier.DataSource = null;
+            }
+
+           
         }
     }
 }
