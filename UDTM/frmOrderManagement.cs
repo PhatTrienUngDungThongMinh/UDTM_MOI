@@ -139,22 +139,20 @@ namespace DoAnUDTM
 
             if (currentStatus == "Chờ xác nhận")
             {
-                cbbTrangThai.Items.Add("Đã Hủy");
+                cbbTrangThai.Items.Add("Hủy đơn");
                 cbbTrangThai.Items.Add("Đã xác nhận");
             }
             else if (currentStatus == "Đã xác nhận")
             {
                 cbbTrangThai.Items.Add("Chờ giao hàng");
-                cbbTrangThai.Items.Add("Đã Hủy");
             }
             else if (currentStatus == "Chờ giao hàng")
             {
                 cbbTrangThai.Items.Add("Hoàn thành");
-                cbbTrangThai.Items.Add("Đã Hủy");
             }
             else if (currentStatus == "Đã Hủy" || currentStatus == "Hoàn thành")
             {
-                cbbTrangThai.Items.Add("Không thay đổi được");
+                MessageBox.Show("Đơn hàng đã hoàn tất!");
             }
 
             cbbTrangThai.Text = currentStatus;
