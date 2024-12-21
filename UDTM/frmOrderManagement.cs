@@ -17,6 +17,7 @@ namespace DoAnUDTM
     {
         OrderCustomerBLL orderCustomer = new OrderCustomerBLL();
         OrderProductDetailBLL productDetail = new OrderProductDetailBLL();  
+        CustomerBLL customer = new CustomerBLL();
         public frmOrderManagement()
         {
             InitializeComponent();
@@ -24,14 +25,17 @@ namespace DoAnUDTM
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
+            load();
+        }
+        private void load()
+        {
             DsHoaDon.AutoGenerateColumns = false;
             List<OrderCustomer> order = orderCustomer.GetAllOrderCustomers();
-            order = order.Where(o => o.OrderStatus == "Chờ xác nhận" || o.OrderStatus == "Đã xác nhận"||
+            order = order.Where(o => o.OrderStatus == "Chờ xác nhận" || o.OrderStatus == "Đã xác nhận" ||
                                       o.OrderStatus == "Chờ giao hàng").ToList();
             DsHoaDon.DataSource = order;
             DsHoaDon.CellClick += DsHoaDon_CellClick;
         }
-
         private void DsHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < DsHoaDon.Rows.Count)
@@ -70,6 +74,8 @@ namespace DoAnUDTM
                 txtTongTien.Text = selectedRow.Cells["TotalAmount"].Value?.ToString() ?? string.Empty;
                 txtTrangThai.Text = selectedRow.Cells["Status"].Value?.ToString() ?? string.Empty;
                 cbbTrangThai.Text = selectedRow.Cells["Status"].Value?.ToString() ?? string.Empty;
+                string idcustomer = selectedRow.Cells["Customer"].Value?.ToString();
+                nameCustomer.Text = customer.GetCustomerById(idcustomer).CustomerName;
                 UpdateComboBoxItems(txtTrangThai.Text);
             }
         }
@@ -93,7 +99,16 @@ namespace DoAnUDTM
                 MessageBox.Show("Không tìm thấy kết quả phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        private void reset()
+        {
+            txtMaHD.Clear() ;
+            txtNgayBan.Clear() ;
+            txtTongTien.Clear();
+            txtTrangThai.Clear();
+            cbbTrangThai.Text = "";
+            cbbTrangThai.Items.Clear();
+            dataGridView1.DataSource = null;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaHD.Text))
@@ -117,8 +132,8 @@ namespace DoAnUDTM
                 int orderId = int.Parse(txtMaHD.Text);
                 string newStatus = cbbTrangThai.SelectedItem.ToString();
                 orderCustomer.UpdateOrderStatus(orderId, newStatus);
-
-                DsHoaDon.DataSource = orderCustomer.GetAllOrderCustomers();
+                reset();
+                load();
 
                 MessageBox.Show("Cập nhật trạng thái hóa đơn thành công!",
                                 "Thông báo",
@@ -158,7 +173,10 @@ namespace DoAnUDTM
             cbbTrangThai.Text = currentStatus;
         }
 
+        private void cbbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
     }
 }

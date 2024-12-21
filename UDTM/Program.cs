@@ -17,7 +17,7 @@ namespace UDTM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmImportedGoods());
+            Application.Run(new Login());
         }
     }
 }

@@ -35,8 +35,11 @@ namespace BLL
 
             supplierDAL.AddSupplier(supplier);
         }
-
-        public void UpdateSupplier(Supplier supplier)
+        public Supplier findSupplier(int supplierId)
+        { 
+            return supplierDAL.findSupplier(supplierId);
+        }
+            public void UpdateSupplier(Supplier supplier)
         {
             if (string.IsNullOrWhiteSpace(supplier.SupplierName))
             {

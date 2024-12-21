@@ -31,8 +31,11 @@ namespace BLL
     
             return new DeliveryReceiptDetailDAL().GetProductIdsByReceiptId(receiptId);
         }
-
-        public void AddDeliveryReceiptDetail(DeliveryReceiptDetail detail)
+        public List<DeliveryReceiptDetail> GetProductsByReceiptId(int receiptId)
+        {
+            return deliveryReceiptDetailDAL.GetProductsByReceiptId(receiptId); 
+        }
+            public void AddDeliveryReceiptDetail(DeliveryReceiptDetail detail)
         {
             if (detail.Quantity <= 0)
             {

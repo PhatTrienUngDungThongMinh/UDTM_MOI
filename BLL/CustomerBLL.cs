@@ -21,8 +21,11 @@ namespace BLL
         {
             return customerDAL.GetAllCustomers();
         }
-
-        public void AddCustomer(Customer customer)
+        public Customer GetCustomerById(string Id)
+        {
+            return customerDAL.GetCustomerById(Id);
+        }
+            public void AddCustomer(Customer customer)
         {
             if (string.IsNullOrWhiteSpace(customer.CustomerName))
             {

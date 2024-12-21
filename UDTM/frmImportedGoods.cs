@@ -203,7 +203,7 @@ namespace UDTM
                     createdAt = DateTime.Now,
                     updatedAt = DateTime.Now,
                     EmployeeID = 1,
-                    Status = "Chờ xác nhận"
+                    Status = "Đã đặt hàng"
                 };
 
 

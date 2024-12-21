@@ -46,7 +46,10 @@ namespace DAL
                 throw new Exception("Supplier not found");
             }
         }
-
+        public Supplier findSupplier(int supplierId)
+        {
+            return db.Suppliers.SingleOrDefault(s => s.id == supplierId);
+        }
 
         public void DeleteSupplier(int supplierId)
         {

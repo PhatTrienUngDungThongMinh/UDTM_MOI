@@ -22,8 +22,11 @@ namespace BLL
         {
             return deliveryReceiptDAL.GetAllDeliveryReceipts();
         }
-
-        public void AddDeliveryReceipt(DeliveryReceipt receipt, BindingList<DeliveryReceiptDetail> de)
+        public void UpdateDeliveryReceiptStatus(int id, string status)
+        {
+            deliveryReceiptDAL.UpdateDeliveryReceiptStatus(id, status);
+        }
+            public void AddDeliveryReceipt(DeliveryReceipt receipt, BindingList<DeliveryReceiptDetail> de)
         {
             deliveryReceiptDAL.AddDeliveryReceipt(receipt,de);
         }

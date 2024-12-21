@@ -28,7 +28,12 @@ namespace DAL
                      .Select(d => d.ProductID)
                      .ToList();
         }
-
+        public List<DeliveryReceiptDetail> GetProductsByReceiptId(int receiptId)
+        {
+            return db.DeliveryReceiptDetails
+                     .Where(d => d.ReceiptID == receiptId)
+                     .ToList();
+        }
 
         public void AddDeliveryReceiptDetail(DeliveryReceiptDetail detail)
         {

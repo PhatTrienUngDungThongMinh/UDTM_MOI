@@ -43,7 +43,20 @@ namespace DAL
                 throw; 
             }
         }
+        public void UpdateDeliveryReceiptStatus(int id, string status)
+        {
+            var existing= db.DeliveryReceipts.SingleOrDefault(o => o.id == id);
+            if (existing != null)
+            {
 
+                existing.Status = status;
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("OrderCustomer not found");
+            }
+        }
         public void UpdateDeliveryReceipt(DeliveryReceipt receipt)
         {
             var existingReceipt = db.DeliveryReceipts.SingleOrDefault(r => r.id == receipt.id);

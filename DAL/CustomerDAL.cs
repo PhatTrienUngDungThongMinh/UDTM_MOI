@@ -26,7 +26,11 @@ namespace DAL
             db.Customers.InsertOnSubmit(customer);
             db.SubmitChanges();
         }
-
+        public Customer GetCustomerById(string Id)
+        {
+            var customer = db.Customers.FirstOrDefault(ug => ug.id == Id);
+            return customer;
+        }
         public void UpdateCustomer(Customer customer)
         {
             var existingCustomer = db.Customers.SingleOrDefault(c => c.id == customer.id);
